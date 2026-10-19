@@ -1,6 +1,13 @@
 /* Rep Rot site: black and white, wide caps headlines (Archivo Expanded,
-   same family as the app and the RR logo), system sans for body text. */
-@import url("https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@125,900&display=swap");
+   same family as the app and the RR logo), system sans for body text.
+   The font is served from this site (OFL, see fonts/), not Google Fonts,
+   so visitors' IPs aren't sent to a third party. */
+@font-face {
+  font-family: "Archivo Expanded";
+  src: url("/fonts/ArchivoExpanded-Black.ttf") format("truetype");
+  font-weight: 900;
+  font-display: swap;
+}
 
 :root {
   --bg: #ffffff;
@@ -36,8 +43,7 @@ header img { width: 44px; height: 44px; border-radius: 11px; }
 header a { color: var(--text); text-decoration: none; }
 
 .brand, h1, h2 {
-  font-family: "Archivo", "Helvetica Neue", Arial, sans-serif;
-  font-stretch: 125%;
+  font-family: "Archivo Expanded", "Helvetica Neue", Arial, sans-serif;
   font-weight: 900;
   text-transform: uppercase;
   letter-spacing: 0.5px;
