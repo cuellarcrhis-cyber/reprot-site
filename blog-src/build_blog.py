@@ -13,9 +13,9 @@ comment:
     -->
     <p>First paragraph...</p>
 
-`cover` is optional: the name of an image in blog/img/lib/ to put on the
-right of the post's cover (see blog-src/WRITING.md for the list). Without
-it, exercise tags pick their photo and other posts get the plain cover.
+`cover` is optional: an exercise (squat, pushup, plank, pullup, crunch) to
+draw on the right of the post's cover. Without it, exercise tags pick their
+figure and other posts get the tally-mark cover.
 
 Writes, from the repo root (the site GitHub Pages serves). blog-src/ is
 served too, so robots.txt keeps crawlers out of it:
@@ -30,6 +30,7 @@ Needs Pillow (pip install pillow). Run: python3 blog-src/build_blog.py
 """
 
 import datetime
+import sys
 import html
 import json
 import math
@@ -47,6 +48,7 @@ SITE = "https://reprotapp.com"
 EARLY_ACCESS = "mailto:help@reprotapp.com?subject=Rep%20Rot%20early%20access&body=Hi!%20I%27d%20like%20early%20access%20to%20Rep%20Rot.%20My%20iPhone%20model%3A%20"
 ROOT = Path(__file__).resolve().parent.parent   # the repo root is the site (GitHub Pages)
 POSTS = Path(__file__).resolve().parent / "posts"
+sys.path.insert(0, str(POSTS.parent))   # for art.py
 BLOG = ROOT / "blog"
 LIB = BLOG / "img" / "lib"
 COVERS = BLOG / "img" / "covers"
@@ -54,7 +56,7 @@ FONT = ROOT / "fonts" / "ArchivoExpanded-Black.ttf"
 STATIC_PAGES = ["", "support/", "privacy/"]
 KEEP = {"img"}   # folders in blog/ that aren't posts
 
-# Exercise tags pick a photo for the cover when the post doesn't name one.
+# Exercise tags pick a figure for the cover when the post doesn't name one.
 TAG_PHOTOS = {"Squats": "squat", "Push-Ups": "pushup", "Plank": "plank",
               "Pull-Ups": "pullup", "Sit-Ups": "crunch"}
 
@@ -73,8 +75,8 @@ def parse(path):
             raise SystemExit(f"{path.name}: missing '{key}'")
     tags = [t.strip() for t in meta["tags"].split(",") if t.strip()]
     cover = meta.get("cover") or next((TAG_PHOTOS[t] for t in tags if t in TAG_PHOTOS), "")
-    if cover and not (LIB / f"{cover}.jpg").exists():
-        raise SystemExit(f"{path.name}: cover '{cover}' isn't in blog/img/lib/")
+    if cover and cover not in TAG_PHOTOS.values():
+        raise SystemExit(f"{path.name}: cover must be one of {', '.join(TAG_PHOTOS.values())}")
     body = match.group(2).strip()
     words = len(re.sub(r"<[^>]+>", " ", body).split())
     return {
@@ -130,31 +132,19 @@ def make_cover(post, path):
     text_w = W - 2 * pad
     name = post["cover"]
 
-    if name.startswith("app-"):
-        # A phone screenshot standing on the right, running off the bottom.
-        shot = Image.open(LIB / f"{name}.jpg").convert("RGB")
-        sw = 330
-        shot = shot.resize((sw, int(shot.height * sw / shot.width)), Image.LANCZOS)
-        shot = shot.crop((0, int(shot.height * 0.205), sw, int(shot.height * 0.205) + H))
-        img.paste(rounded(shot, 34), (W - sw - 70, 64), rounded(shot, 34))
-        text_w = W - sw - 70 - pad - 56
-    elif name:
-        # An exercise photo on the right, fading into the black.
-        photo = Image.open(LIB / f"{name}.jpg").convert("RGB").resize((W, H), Image.LANCZOS)
-        part = photo.crop((360, 0, W, H))
-        fade = Image.linear_gradient("L").rotate(90).resize(part.size)   # 0 left → 255 right
-        fade = fade.point(lambda v: min(255, int(v * 1.6)))
-        img.paste(part, (360, 0), fade)
-        text_w = 560
+    mark = (36, 36, 40)
+    if name:
+        # The exercise, drawn as a white line figure on the right.
+        from art import draw_figure
+        draw_figure(draw, name, (235, 235, 238), scale=0.72, offset=(560, 150))
     else:
         # Tally marks: the reps you'd count on a wall.
-        mark = (30, 30, 33)
         for g in range(3):
             x0 = 700 + g * 170
             for i in range(4):
                 draw.rounded_rectangle((x0 + i * 30, 170, x0 + i * 30 + 12, 470), 6, fill=mark)
             draw.line((x0 - 22, 420, x0 + 122, 220), fill=mark, width=13)
-        text_w = 580
+    text_w = 580
 
     tracked(draw, (pad, pad), post["tags"][0].upper(), font(19), (150, 156, 163), 3)
 
@@ -172,7 +162,7 @@ def make_cover(post, path):
     logo = Image.open(ROOT / "logo.png").convert("RGBA").resize((46, 46), Image.LANCZOS)
     img.paste(logo, (pad, H - pad - 46), logo)
     tracked(draw, (pad + 62, H - pad - 34), "REP ROT", font(20), (245, 245, 246), 2)
-    img.save(path, quality=84, optimize=True)
+    img.save(path, quality=80, optimize=True)
 
 
 # MARK: - HTML

@@ -28,9 +28,8 @@ this repository (reprot-site). Follow every step; quality beats speed.
    - Rep Rot claims match what the app does (see WRITING.md). No overclaims.
    - No banned phrases, no emoji, no filler paragraphs, short paragraphs.
    - Description is 140–160 characters.
-   - 2–4 inline visuals (photo / app screenshot / stat card), spread out,
-     with real alt text and captions; a `cover:` line if it isn't an
-     exercise post.
+   - 2–4 inline visuals (exercise figure / app screen / stat card), spread out,
+     with real alt text and captions. Only images from blog/img/lib/.
 7. Run: python3 blog-src/build_blog.py   It must print the new post count with
    no errors. If it says Pillow is missing, run  pip install pillow  first.
    Check the post has its cover in blog/img/covers/ and 2–4 inline visuals
