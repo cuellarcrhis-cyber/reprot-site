@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /blog-src/
+
+Sitemap: https://reprotapp.com/sitemap.xml

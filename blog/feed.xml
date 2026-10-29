@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+<channel>
+  <title>The Rep Rot Blog</title>
+  <link>https://reprotapp.com/blog/</link>
+  <description>Practical guides for spending less time scrolling and more time moving.</description>
+  <item>
+    <title>Willpower Isn&#x27;t the Problem. Your Feed Is Built for This.</title>
+    <link>https://reprotapp.com/blog/willpower-isnt-the-problem/</link>
+    <guid>https://reprotapp.com/blog/willpower-isnt-the-problem/</guid>
+    <pubDate>Thu, 29 Oct 2026 09:00:00 +0000</pubDate>
+    <description>Why you can&#x27;t stop scrolling even when you want to, and why the answer isn&#x27;t more discipline: it&#x27;s changing what happens when the urge hits.</description>
+  </item>
+  <item>
+    <title>How to Stop Doomscrolling on iPhone (Without Deleting Your Apps)</title>
+    <link>https://reprotapp.com/blog/how-to-stop-doomscrolling-on-iphone/</link>
+    <guid>https://reprotapp.com/blog/how-to-stop-doomscrolling-on-iphone/</guid>
+    <pubDate>Thu, 29 Oct 2026 09:00:00 +0000</pubDate>
+    <description>A practical setup to stop doomscrolling on iPhone: the Screen Time settings that matter in iOS 27, the friction that actually works, and what to do instead.</description>
+  </item>
+  <item>
+    <title>Exercise Snacks: Why One-Minute Workouts Count</title>
+    <link>https://reprotapp.com/blog/exercise-snacks/</link>
+    <guid>https://reprotapp.com/blog/exercise-snacks/</guid>
+    <pubDate>Thu, 29 Oct 2026 09:00:00 +0000</pubDate>
+    <description>Exercise snacks are short bursts of hard effort spread across the day. What the research shows, how to do them at home, and a simple plan to start.</description>
+  </item>
+</channel>
+</rss>

@@ -1,0 +1,46 @@
+You are writing today's post for the Rep Rot blog. Work in the root of
+this repository (reprot-site). Follow every step; quality beats speed.
+"Today" is the current date in America/Los_Angeles (run: TZ=America/Los_Angeles date +%F).
+
+1. Read blog-src/WRITING.md (the rules) and blog-src/topics.md (the queue). Read
+   2–3 existing posts in blog-src/posts/ to match the voice and avoid repeating
+   them.
+2. If a post in blog-src/posts/ already has today's date in its header, stop
+   and print "Already posted today." Do nothing else.
+3. Take the first unchecked topic in topics.md. If it overlaps an existing
+   post, skip it (mark it "- [~] … (skipped: overlaps <slug>)") and take
+   the next.
+4. Research before writing. Use WebSearch/WebFetch to find what currently
+   ranks for the main search phrase (to beat it, not copy it) and to verify
+   every fact you'll use: studies from PubMed/journals/universities, Apple
+   support pages for any iPhone steps (check the current iOS version's
+   wording), and official guidelines. At least 3 solid sources. If a fact
+   can't be verified, leave it out.
+5. Write blog-src/posts/<slug>.html in the exact format WRITING.md describes,
+   dated today. Link 2–3 relevant earlier posts with ../<slug>/ (only slugs
+   that exist in blog-src/posts/).
+6. Review it against this list and fix anything that fails:
+   - Opening is a specific scene, not a definition or a generality.
+   - The main search phrase appears in the title, first 100 words and an h2.
+   - Every number, study and setting is in the Sources line, and studies
+     are described honestly (sample, observational vs trial).
+   - Exercise advice includes easier versions and safety notes.
+   - Rep Rot claims match what the app does (see WRITING.md). No overclaims.
+   - No banned phrases, no emoji, no filler paragraphs, short paragraphs.
+   - Description is 140–160 characters.
+7. Run: python3 blog-src/build_blog.py   It must print the new post count with
+   no errors.
+8. In topics.md, check off the topic: "- [x] … (YYYY-MM-DD, <slug>)". If
+   fewer than 10 unchecked topics remain, research and append 10 new ones
+   people actually search for, in the same format, mixing how-to and point
+   of view across screen time, mornings/sleep and bodyweight training.
+9. Append one line to blog-src/logs/published.md:
+   "YYYY-MM-DD  <slug>  <title>  (<word count> words)".
+
+10. Commit and push to main:
+    git add -A && git commit -m "Blog: <title>" && git push origin HEAD:main
+    If the push is rejected, git pull --rebase origin main, rebuild, and
+    push again.
+
+Only change blog-src/ and the files the build script writes. Don't edit
+Website/*.html by hand.
