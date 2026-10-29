@@ -95,9 +95,9 @@ tags: Screen Time, iPhone Tips
 ```
 
 Optional header line `cover: <exercise>` (squat, pushup, plank, pullup,
-crunch) draws that exercise on the post's cover. Without it, exercise tags
-(Squats, Push-Ups, Plank, Pull-Ups, Sit-Ups) pick their figure; every
-other post gets the tally-mark cover. Covers are generated; don't add one.
+crunch) puts that exercise's photo behind the post's cover. Without it,
+exercise tags (Squats, Push-Ups, Plank, Pull-Ups, Sit-Ups) pick their photo;
+every other post gets a tally-mark cover. Covers are generated; don't add one.
 
 Allowed markup: p, h2, h3, ul, ol, li, strong, em, a, blockquote, hr,
 table/thead/tbody/tr/th/td, figure/img/figcaption, div class="stat",
@@ -109,16 +109,16 @@ Every post gets a generated cover automatically. Inside the post, add a
 visual every 2–3 sections: at least 2, at most 4. Never two in a row, and
 never the same image twice in a post. Three kinds:
 
-These are example drawings (line figures and simplified phone screens),
-not photos. Use only files in blog/img/lib/; never photos or images from
-elsewhere.
+These are the app's own pictures: exercise photos darkened and blurred to
+fit the black theme, and App Store screenshots cropped to the phone. Use
+only files in blog/img/lib/; never images from elsewhere.
 
-1. **Exercise figure** (wide):
+1. **Exercise photo** (wide):
    `<figure><img src="../img/lib/squat.jpg" alt="…" loading="lazy" width="960" height="540"><figcaption>…</figcaption></figure>`
    squat, pushup, plank, pullup, crunch (a sit-up/crunch).
-2. **App screen** (narrow phone, only where Rep Rot comes up):
-   `<figure class="phone"><img src="../img/lib/app-one-set.png" alt="…" loading="lazy" width="360" height="720"><figcaption>…</figcaption></figure>`
-   - app-dont-rot: "Don't rot. Rep instead." splash
+2. **App screenshot** (narrow phone, only where Rep Rot comes up):
+   `<figure class="phone"><img src="../img/lib/app-one-set.jpg" alt="…" loading="lazy" width="360" height="633"><figcaption>…</figcaption></figure>`
+   - app-dont-rot: "Rep Rot, Don't rot. Rep instead." splash
    - app-home: home screen, weekly streak, today's push-ups plan
    - app-triggers: alarms and app limits list
    - app-pick-trigger: "When should we make you rep?" alarm or app limit

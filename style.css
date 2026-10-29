@@ -149,7 +149,7 @@ body.blog main { max-width: none; padding: 0; }
 .prose tr:last-child td { border-bottom: 0; }
 .prose figure { margin: 2em auto; max-width: 420px; }
 .prose figure img { display: block; width: 100%; height: auto; border-radius: 14px; border: 1px solid var(--line); }
-.prose figure.phone img { width: 180px; margin: 0 auto; border: 0; border-radius: 0; }
+.prose figure.phone img { width: 200px; margin: 0 auto; border: 0; border-radius: 22px; }
 .prose figcaption { font-size: 14px; color: var(--muted); text-align: center; margin-top: 10px; line-height: 1.5; }
 .prose .stat { margin: 2em auto; max-width: 520px; background: #0a0a0b; color: #f5f5f6; border-radius: 16px; padding: 24px 24px; text-align: center; }
 .prose .stat strong { display: block; color: #f5f5f6; font-family: "Archivo Expanded", "Helvetica Neue", Arial, sans-serif; font-weight: 900; text-transform: uppercase; font-size: clamp(26px, 5vw, 34px); line-height: 1.1; letter-spacing: .5px; margin-bottom: 8px; }

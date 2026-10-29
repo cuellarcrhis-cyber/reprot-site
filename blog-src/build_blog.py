@@ -13,9 +13,11 @@ comment:
     -->
     <p>First paragraph...</p>
 
-`cover` is optional: an exercise (squat, pushup, plank, pullup, crunch) to
-draw on the right of the post's cover. Without it, exercise tags pick their
-figure and other posts get the tally-mark cover.
+`cover` is optional: an exercise (squat, pushup, plank, pullup, crunch)
+whose photo goes behind the post's cover. Without it, exercise tags pick
+their photo and other posts get a tally-mark cover over a photo picked from
+the slug. The photos are the app's own, darkened and blurred (see
+blog-src/prepare_images.py).
 
 Writes, from the repo root (the site GitHub Pages serves). blog-src/ is
 served too, so robots.txt keeps crawlers out of it:
@@ -30,7 +32,6 @@ Needs Pillow (pip install pillow). Run: python3 blog-src/build_blog.py
 """
 
 import datetime
-import sys
 import html
 import json
 import math
@@ -48,7 +49,6 @@ SITE = "https://reprotapp.com"
 EARLY_ACCESS = "mailto:help@reprotapp.com?subject=Rep%20Rot%20early%20access&body=Hi!%20I%27d%20like%20early%20access%20to%20Rep%20Rot.%20My%20iPhone%20model%3A%20"
 ROOT = Path(__file__).resolve().parent.parent   # the repo root is the site (GitHub Pages)
 POSTS = Path(__file__).resolve().parent / "posts"
-sys.path.insert(0, str(POSTS.parent))   # for art.py
 BLOG = ROOT / "blog"
 LIB = BLOG / "img" / "lib"
 COVERS = BLOG / "img" / "covers"
@@ -56,7 +56,7 @@ FONT = ROOT / "fonts" / "ArchivoExpanded-Black.ttf"
 STATIC_PAGES = ["", "support/", "privacy/"]
 KEEP = {"img"}   # folders in blog/ that aren't posts
 
-# Exercise tags pick a figure for the cover when the post doesn't name one.
+# Exercise tags pick a photo for the cover when the post doesn't name one.
 TAG_PHOTOS = {"Squats": "squat", "Push-Ups": "pushup", "Plank": "plank",
               "Pull-Ups": "pullup", "Sit-Ups": "crunch"}
 
@@ -132,13 +132,17 @@ def make_cover(post, path):
     text_w = W - 2 * pad
     name = post["cover"]
 
-    mark = (36, 36, 40)
-    if name:
-        # The exercise, drawn as a white line figure on the right.
-        from art import draw_figure
-        draw_figure(draw, name, (235, 235, 238), scale=0.72, offset=(560, 150))
-    else:
+    # Background: one of the app's exercise photos, blurred and darkened
+    # (blog/img/lib/bg-*.jpg). Exercise posts get their own exercise; the
+    # rest get one picked from the slug, with tally marks on top.
+    bg = name or sorted(TAG_PHOTOS.values())[sum(map(ord, post["slug"])) % len(TAG_PHOTOS)]
+    img.paste(Image.open(LIB / f"bg-{bg}.jpg").convert("RGB").resize((W, H)))
+    shade = Image.linear_gradient("L").rotate(90).resize((W, H)).point(lambda v: 235 - int(v * 0.7))
+    img.paste(Image.new("RGB", (W, H), (8, 8, 9)), (0, 0), shade)   # darker behind the title
+    draw = ImageDraw.Draw(img)
+    if not name:
         # Tally marks: the reps you'd count on a wall.
+        mark = (58, 58, 62)
         for g in range(3):
             x0 = 700 + g * 170
             for i in range(4):
