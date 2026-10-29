@@ -8,6 +8,8 @@ Format: `- [ ] Working title — main search phrase — shape`
 
 ## Queue
 
+- [x] How to Stay Consistent With Working Out: Adjust, Don't Miss — how to stay consistent with working out — point of view (2026-10-29, how-to-stay-consistent-with-working-out; inspired by @sober.fitness and @dailyrepsguy)
+
 - [x] How to Stop Doomscrolling on iPhone (Without Deleting Your Apps) — how to stop doomscrolling — how-to (2026-10-29, how-to-stop-doomscrolling-on-iphone)
 - [x] Exercise Snacks: Why One-Minute Workouts Count — exercise snacks — point of view (2026-10-29, exercise-snacks)
 - [ ] Your Alarm Isn't Too Quiet. Your Bed Is Too Easy. — how to get out of bed in the morning — point of view
