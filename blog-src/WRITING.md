@@ -105,15 +105,29 @@ p class="sources". No inline styles, no scripts, no images from other sites.
 
 ## Images and visual rhythm
 
-Every post gets a generated cover automatically. Inside the post, add a
-visual every 2–3 sections: at least 2, at most 4. Never two in a row, and
-never the same image twice in a post. Three kinds:
+Like liinks.co/blog, every post gets illustrations made for it with an AI
+image model, in one shared Rep Rot style (dark, charcoal, one orange accent,
+no text). Make them with:
 
-These are the app's own pictures: exercise photos darkened and blurred to
-fit the black theme, and App Store screenshots cropped to the phone. Use
-only files in blog/img/lib/; never images from elsewhere.
+    python3 blog-src/gen_image.py <slug>-header "<scene>"
+    python3 blog-src/gen_image.py <slug>-1 "<scene>"
 
-1. **Exercise photo** (wide):
+- **Header** (`<slug>-header`, required): a scene that captures the post's
+  idea at a glance. It becomes the cover on the card, the top of the post and
+  the social preview. Don't add it to the body; the build does that.
+- **Inline** (`<slug>-1`, `<slug>-2`, one or two): a scene that explains a
+  specific section. Put it after that section's first paragraphs:
+  `<figure><img src="../img/posts/<slug>-1.jpg" alt="…" loading="lazy" width="1200" height="675"><figcaption>…</figcaption></figure>`
+
+Describe the scene only (gen_image.py adds the style): concrete objects and
+people, one clear idea, e.g. "a phone lying face-down on a nightstand next to
+an old alarm clock, a person in the background doing a squat in morning
+light". Never ask for text, numbers, logos or UI labels; models garble them.
+Write real alt text describing what's in the picture.
+
+Also available for variety (use 0–2 per post):
+
+1. **The app's exercise photos** (darkened, blurred), wide:
    `<figure><img src="../img/lib/squat.jpg" alt="…" loading="lazy" width="960" height="540"><figcaption>…</figcaption></figure>`
    squat, pushup, plank, pullup, crunch (a sit-up/crunch).
 2. **App screenshot** (narrow phone, only where Rep Rot comes up):

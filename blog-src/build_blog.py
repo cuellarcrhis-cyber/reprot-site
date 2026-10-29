@@ -383,7 +383,13 @@ def main():
             cover.unlink()
 
     for post in posts:
-        make_cover(post, COVERS / f"{post['slug']}.jpg")
+        # An AI header illustration (blog-src/gen_image.py) is the cover when
+        # the post has one; otherwise the generated title cover.
+        header = BLOG / "img" / "posts" / f"{post['slug']}-header.jpg"
+        if header.exists():
+            Image.open(header).convert("RGB").resize((1200, 675)).save(COVERS / f"{post['slug']}.jpg", quality=82, optimize=True)
+        else:
+            make_cover(post, COVERS / f"{post['slug']}.jpg")
         out = BLOG / post["slug"]
         out.mkdir(exist_ok=True)
         (out / "index.html").write_text(post_page(post, posts), encoding="utf-8")
