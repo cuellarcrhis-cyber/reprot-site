@@ -8,6 +8,7 @@ Format: `- [ ] Working title — main search phrase — shape`
 
 ## Queue
 
+- [x] The Phone Is the Enemy of Focus: Brian Chesky's Big-Screen Rule — how to focus better / phone and focus — point of view (2026-10-29, phone-is-the-enemy-of-focus; from a Silicon Valley Girl Podcast clip)
 - [x] How to Stay Consistent With Working Out: Adjust, Don't Miss — how to stay consistent with working out — point of view (2026-10-29, how-to-stay-consistent-with-working-out; inspired by @sober.fitness and @dailyrepsguy)
 
 - [x] How to Stop Doomscrolling on iPhone (Without Deleting Your Apps) — how to stop doomscrolling — how-to (2026-10-29, how-to-stop-doomscrolling-on-iphone)

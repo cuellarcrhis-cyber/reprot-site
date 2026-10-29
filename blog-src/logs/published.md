@@ -2,3 +2,4 @@
 2026-10-29  willpower-isnt-the-problem  Willpower Isn't the Problem. Your Feed Is Built for This.  (1097 words)
 2026-10-29  exercise-snacks  Exercise Snacks: Why One-Minute Workouts Count  (1163 words)
 2026-10-29  how-to-stay-consistent-with-working-out  How to Stay Consistent With Working Out: Adjust, Don't Miss  (1194 words)
+2026-10-29  phone-is-the-enemy-of-focus  The Phone Is the Enemy of Focus: Brian Chesky's Big-Screen Rule  (1103 words)
