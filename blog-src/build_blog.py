@@ -247,9 +247,14 @@ def related(post, posts):
 
 
 def prose(body):
-    """Boxes the TL;DR section so it reads as a summary card."""
-    return re.sub(r"<h2>TL;DR</h2>\s*(<ul>.*?</ul>)",
-                  r'<div class="tldr"><h2>TL;DR</h2>\1</div>', body, flags=re.S)
+    """Moves the TL;DR section to the top of the post, boxed as a summary
+    card, wherever the writer put it."""
+    match = re.search(r"<h2>TL;DR</h2>\s*(<ul>.*?</ul>)", body, flags=re.S)
+    if not match:
+        return body
+    rest = (body[:match.start()] + body[match.end():]).strip()
+    return f'<div class="tldr"><h2>TL;DR</h2>{match.group(1)}</div>\n\n{rest}'
+
 
 
 CTA = f"""  <aside class="cta-card">

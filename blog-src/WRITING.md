@@ -39,7 +39,9 @@ They want something they can do today, not a lecture.
 - 4–7 `<h2>` sections with plain, specific headings (sentence case). `<h3>`
   only if needed. Use `<hr>` between big shifts.
 - At least one list, table or numbered routine the reader can use.
-- A `<h2>TL;DR</h2>` with 4–6 bullets near the end.
+- A `<h2>TL;DR</h2>` with 4–6 bullets. The build moves it to the top of the
+  post (right under the cover), so write it as a summary someone could read
+  instead of the post.
 - Close with a short section that ties the advice to Rep Rot, naturally and
   honestly (what the app actually does: app limits that lock until you do a
   set, an alarm that stops only after reps, camera rep counting on the phone,
