@@ -9,18 +9,24 @@ comment:
     description: One or two sentences for search results and the card.
     date: 2026-10-29
     tags: Screen Time, Habits
+    cover: app-one-set
     -->
     <p>First paragraph...</p>
 
+`cover` is optional: the name of an image in blog/img/lib/ to put on the
+right of the post's cover (see blog-src/WRITING.md for the list). Without
+it, exercise tags pick their photo and other posts get the plain cover.
+
 Writes, from the repo root (the site GitHub Pages serves). blog-src/ is
 served too, so robots.txt keeps crawlers out of it:
-    blog/<slug>/index.html   one page per post (slug = file name)
-    blog/index.html          the list of posts, newest first
-    blog/feed.xml            RSS
+    blog/<slug>/index.html     one page per post (slug = file name)
+    blog/img/covers/<slug>.jpg the post's cover (card, header, social preview)
+    blog/index.html            the landing page, newest first
+    blog/feed.xml              RSS
     sitemap.xml, robots.txt
 
 Posts dated in the future are skipped, so a post can be written ahead.
-Run from anywhere: python3 blog-src/build_blog.py
+Needs Pillow (pip install pillow). Run: python3 blog-src/build_blog.py
 """
 
 import datetime
@@ -30,14 +36,27 @@ import math
 import re
 from pathlib import Path
 
+try:
+    from PIL import Image, ImageDraw, ImageFont
+except ImportError:
+    raise SystemExit("Pillow is missing: run  pip install pillow  and build again.")
+
 SITE = "https://reprotapp.com"
-# Before launch the card asks for an early-access email; after launch,
-# point it at the App Store (https://apps.apple.com/app/id6824360561).
+# Before launch the buttons ask for an early-access email; after launch,
+# point them at the App Store (https://apps.apple.com/app/id6824360561).
 EARLY_ACCESS = "mailto:help@reprotapp.com?subject=Rep%20Rot%20early%20access&body=Hi!%20I%27d%20like%20early%20access%20to%20Rep%20Rot.%20My%20iPhone%20model%3A%20"
 ROOT = Path(__file__).resolve().parent.parent   # the repo root is the site (GitHub Pages)
 POSTS = Path(__file__).resolve().parent / "posts"
 BLOG = ROOT / "blog"
+LIB = BLOG / "img" / "lib"
+COVERS = BLOG / "img" / "covers"
+FONT = ROOT / "fonts" / "ArchivoExpanded-Black.ttf"
 STATIC_PAGES = ["", "support/", "privacy/"]
+KEEP = {"img"}   # folders in blog/ that aren't posts
+
+# Exercise tags pick a photo for the cover when the post doesn't name one.
+TAG_PHOTOS = {"Squats": "squat", "Push-Ups": "pushup", "Plank": "plank",
+              "Pull-Ups": "pullup", "Sit-Ups": "crunch"}
 
 
 def parse(path):
@@ -52,6 +71,10 @@ def parse(path):
     for key in ("title", "description", "date", "tags"):
         if not meta.get(key):
             raise SystemExit(f"{path.name}: missing '{key}'")
+    tags = [t.strip() for t in meta["tags"].split(",") if t.strip()]
+    cover = meta.get("cover") or next((TAG_PHOTOS[t] for t in tags if t in TAG_PHOTOS), "")
+    if cover and not (LIB / f"{cover}.jpg").exists():
+        raise SystemExit(f"{path.name}: cover '{cover}' isn't in blog/img/lib/")
     body = match.group(2).strip()
     words = len(re.sub(r"<[^>]+>", " ", body).split())
     return {
@@ -59,38 +82,129 @@ def parse(path):
         "title": meta["title"],
         "description": meta["description"],
         "date": datetime.date.fromisoformat(meta["date"]),
-        "tags": [t.strip() for t in meta["tags"].split(",") if t.strip()],
+        "tags": tags,
+        "cover": cover,
         "body": body,
         "minutes": max(1, math.ceil(words / 230)),
     }
 
+
+# MARK: - Covers
+
+def font(size):
+    return ImageFont.truetype(str(FONT), size)
+
+
+def wrap(draw, text, fnt, width):
+    lines, line = [], ""
+    for word in text.split():
+        trial = f"{line} {word}".strip()
+        if draw.textlength(trial, font=fnt) <= width or not line:
+            line = trial
+        else:
+            lines.append(line)
+            line = word
+    return lines + [line]
+
+
+def tracked(draw, xy, text, fnt, fill, spacing):
+    x, y = xy
+    for ch in text:
+        draw.text((x, y), ch, font=fnt, fill=fill)
+        x += draw.textlength(ch, font=fnt) + spacing
+
+
+def rounded(img, radius):
+    mask = Image.new("L", img.size, 0)
+    ImageDraw.Draw(mask).rounded_rectangle((0, 0, *img.size), radius, fill=255)
+    out = Image.new("RGBA", img.size)
+    out.paste(img, (0, 0), mask)
+    return out
+
+
+def make_cover(post, path):
+    """1200×675, in the App Store screenshots' style: black, wide caps."""
+    W, H, pad = 1200, 675, 72
+    img = Image.new("RGB", (W, H), (10, 10, 11))
+    draw = ImageDraw.Draw(img)
+    text_w = W - 2 * pad
+    name = post["cover"]
+
+    if name.startswith("app-"):
+        # A phone screenshot standing on the right, running off the bottom.
+        shot = Image.open(LIB / f"{name}.jpg").convert("RGB")
+        sw = 330
+        shot = shot.resize((sw, int(shot.height * sw / shot.width)), Image.LANCZOS)
+        shot = shot.crop((0, int(shot.height * 0.205), sw, int(shot.height * 0.205) + H))
+        img.paste(rounded(shot, 34), (W - sw - 70, 64), rounded(shot, 34))
+        text_w = W - sw - 70 - pad - 56
+    elif name:
+        # An exercise photo on the right, fading into the black.
+        photo = Image.open(LIB / f"{name}.jpg").convert("RGB").resize((W, H), Image.LANCZOS)
+        part = photo.crop((360, 0, W, H))
+        fade = Image.linear_gradient("L").rotate(90).resize(part.size)   # 0 left → 255 right
+        fade = fade.point(lambda v: min(255, int(v * 1.6)))
+        img.paste(part, (360, 0), fade)
+        text_w = 560
+    else:
+        # Tally marks: the reps you'd count on a wall.
+        mark = (30, 30, 33)
+        for g in range(3):
+            x0 = 700 + g * 170
+            for i in range(4):
+                draw.rounded_rectangle((x0 + i * 30, 170, x0 + i * 30 + 12, 470), 6, fill=mark)
+            draw.line((x0 - 22, 420, x0 + 122, 220), fill=mark, width=13)
+        text_w = 580
+
+    tracked(draw, (pad, pad), post["tags"][0].upper(), font(19), (150, 156, 163), 3)
+
+    title = post["title"].upper()
+    for size in range(68, 30, -2):
+        fnt = font(size)
+        lines = wrap(draw, title, fnt, text_w)
+        if len(lines) <= 5:
+            break
+    y = pad + 58
+    for line in lines:
+        draw.text((pad, y), line, font=fnt, fill=(245, 245, 246))
+        y += int(size * 1.12)
+
+    logo = Image.open(ROOT / "logo.png").convert("RGBA").resize((46, 46), Image.LANCZOS)
+    img.paste(logo, (pad, H - pad - 46), logo)
+    tracked(draw, (pad + 62, H - pad - 34), "REP ROT", font(20), (245, 245, 246), 2)
+    img.save(path, quality=84, optimize=True)
+
+
+# MARK: - HTML
 
 def esc(text):
     return html.escape(text, quote=True)
 
 
 def nice_date(date):
-    return date.strftime("%B %-d, %Y")
+    return date.strftime("%b %-d, %Y")
 
 
-def tags_html(post):
-    return "".join(f'<span class="tag">{esc(t)}</span>' for t in post["tags"])
+def byline(post, up):
+    return (f'<div class="byline"><img class="avatar" src="{up}logo.png" alt="">'
+            f'<span>Rep Rot Team</span><span class="dot">·</span>'
+            f'<time datetime="{post["date"].isoformat()}">{nice_date(post["date"])}</time>'
+            f'<span class="dot">·</span><span>{post["minutes"]} min read</span></div>')
 
 
-def meta_line(post):
-    return f'<time datetime="{post["date"].isoformat()}">{nice_date(post["date"])}</time> · {post["minutes"]} min read'
+def card(post, to_blog, up):
+    """to_blog = path to /blog/ from the page; up = path to the site root."""
+    return f"""    <a class="post-card" href="{to_blog}{post['slug']}/">
+      <div class="thumb"><img src="{to_blog}img/covers/{post['slug']}.jpg" alt="" loading="lazy" width="1200" height="675"></div>
+      <div class="card-body">
+        <h3>{esc(post['title'])}</h3>
+        <p>{esc(post['description'])}</p>
+        {byline(post, up)}
+      </div>
+    </a>"""
 
 
-def card(post, prefix):
-    return f"""  <a class="post-card" href="{prefix}{post['slug']}/">
-    <div class="tags">{tags_html(post)}</div>
-    <h2>{esc(post['title'])}</h2>
-    <p>{esc(post['description'])}</p>
-    <div class="post-meta">{meta_line(post)}</div>
-  </a>"""
-
-
-def page(title, description, url, up, body, extra_head=""):
+def page(title, description, url, up, body, image, extra_head=""):
     """up = path back to the site root, e.g. "../../"."""
     return f"""<!doctype html>
 <html lang="en">
@@ -103,19 +217,29 @@ def page(title, description, url, up, body, extra_head=""):
 <meta property="og:title" content="{esc(title)}">
 <meta property="og:description" content="{esc(description)}">
 <meta property="og:url" content="{url}">
-<meta property="og:image" content="{SITE}/logo.png">
+<meta property="og:image" content="{image}">
 <meta property="og:site_name" content="Rep Rot">
-<meta name="twitter:card" content="summary">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="alternate" type="application/rss+xml" title="Rep Rot Blog" href="{SITE}/blog/feed.xml">
 <link rel="icon" href="{up}logo.png">
 <link rel="stylesheet" href="{up}style.css">
 {extra_head}</head>
-<body>
-<main>
-  <header><a href="{up}"><img src="{up}logo.png" alt=""></a><a class="brand" href="{up}">Rep Rot</a></header>
+<body class="blog">
+<header class="site-head">
+  <div class="wrap head-row">
+    <a class="logo" href="{up}"><img src="{up}logo.png" alt=""><span class="brand">Rep Rot</span></a>
+    <nav class="head-nav"><a href="{up}blog/">Blog</a><a href="{up}support/">Support</a><a class="pill" href="{EARLY_ACCESS}">Early access</a></nav>
+  </div>
+</header>
+<main class="wrap">
 {body}
-  <nav><a href="{up}">Home</a><a href="{up}blog/">Blog</a><a href="{up}support/">Support</a><a href="{up}privacy/">Privacy</a></nav>
 </main>
+<footer class="site-foot">
+  <div class="wrap foot-row">
+    <span>© {datetime.date.today().year} Rep Rot. Don't rot. Rep instead.</span>
+    <nav><a href="{up}">Home</a><a href="{up}blog/">Blog</a><a href="{up}support/">Support</a><a href="{up}privacy/">Privacy</a><a href="{SITE}/blog/feed.xml">RSS</a></nav>
+  </div>
+</footer>
 </body>
 </html>
 """
@@ -128,8 +252,25 @@ def related(post, posts):
     return others[:3]
 
 
+def prose(body):
+    """Boxes the TL;DR section so it reads as a summary card."""
+    return re.sub(r"<h2>TL;DR</h2>\s*(<ul>.*?</ul>)",
+                  r'<div class="tldr"><h2>TL;DR</h2>\1</div>', body, flags=re.S)
+
+
+CTA = f"""  <aside class="cta-card">
+    <div>
+      <p class="cta-kicker">Rep Rot · in testing</p>
+      <h2>Don't rot. Rep instead.</h2>
+      <p>Rep Rot locks the apps you lose hours to, and wakes you with an alarm, until you do your reps. Your iPhone's camera counts them. Email us and we'll send you an early-access invite.</p>
+    </div>
+    <a class="button" href="{EARLY_ACCESS}">Get early access</a>
+  </aside>"""
+
+
 def post_page(post, posts):
     url = f"{SITE}/blog/{post['slug']}/"
+    image = f"{SITE}/blog/img/covers/{post['slug']}.jpg"
     schema = {
         "@context": "https://schema.org",
         "@type": "BlogPosting",
@@ -139,7 +280,7 @@ def post_page(post, posts):
         "dateModified": post["date"].isoformat(),
         "mainEntityOfPage": url,
         "keywords": ", ".join(post["tags"]),
-        "image": f"{SITE}/logo.png",
+        "image": image,
         "author": {"@type": "Organization", "name": "Rep Rot", "url": SITE},
         "publisher": {"@type": "Organization", "name": "Rep Rot",
                       "logo": {"@type": "ImageObject", "url": f"{SITE}/logo.png"}},
@@ -150,38 +291,54 @@ def post_page(post, posts):
     more = related(post, posts)
     more_html = ""
     if more:
-        more_html = '\n  <h2 class="more-title">Keep reading</h2>\n  <div class="post-list">\n' + \
-            "\n".join(card(p, "../") for p in more) + "\n  </div>"
-    body = f"""
-  <article class="post">
-    <p class="crumb"><a href="../">Blog</a></p>
-    <div class="tags">{tags_html(post)}</div>
-    <h1>{esc(post['title'])}</h1>
-    <div class="post-meta">{meta_line(post)}</div>
-
-{post['body']}
+        more_html = ('\n  <section class="more">\n    <h2>Keep reading</h2>\n    <div class="grid">\n'
+                     + "\n".join(card(p, "../", "../../") for p in more) + "\n    </div>\n  </section>")
+    tags = "".join(f'<span class="tag">{esc(t)}</span>' for t in post["tags"])
+    body = f"""  <article class="post">
+    <div class="post-head">
+      <a class="crumb" href="../">← All posts</a>
+      <div class="tags">{tags}</div>
+      <h1>{esc(post['title'])}</h1>
+      <p class="dek">{esc(post['description'])}</p>
+      {byline(post, "../../")}
+    </div>
+    <figure class="post-cover"><img src="../img/covers/{post['slug']}.jpg" alt="" width="1200" height="675"></figure>
+    <div class="prose">
+{prose(post['body'])}
+    </div>
   </article>
-
-  <div class="card cta">
-    <strong>Don't rot. Rep instead.</strong>
-    <p>Rep Rot locks the apps you lose hours to, and wakes you with an alarm, until you do your reps. Your iPhone's camera counts them. It's in testing now: email us and we'll send you an early-access invite.</p>
-    <a class="button" href="{EARLY_ACCESS}">Get early access</a>
-  </div>
+{CTA}
 {more_html}"""
-    return page(f"{post['title']} · Rep Rot", post["description"], url, "../../", body, head)
+    return page(f"{post['title']} · Rep Rot", post["description"], url, "../../", body, image, head)
 
 
 def index_page(posts):
-    body = f"""
-  <h1>The Rep Rot Blog</h1>
-  <p class="lede">Practical guides for spending less time scrolling and more time moving: screen time, habits, bodyweight training and getting out of bed.</p>
-
-  <div class="post-list">
-{chr(10).join(card(p, "") for p in posts)}
-  </div>"""
+    featured, rest = (posts[0], posts[1:]) if posts else (None, [])
+    feat_html = ""
+    if featured:
+        tags = "".join(f'<span class="tag">{esc(t)}</span>' for t in featured["tags"])
+        feat_html = f"""  <a class="featured" href="{featured['slug']}/">
+    <div class="thumb"><img src="img/covers/{featured['slug']}.jpg" alt="" width="1200" height="675"></div>
+    <div class="featured-body">
+      <div class="tags">{tags}</div>
+      <h2>{esc(featured['title'])}</h2>
+      <p>{esc(featured['description'])}</p>
+      {byline(featured, "../")}
+    </div>
+  </a>"""
+    grid = ""
+    if rest:
+        grid = '\n  <div class="grid">\n' + "\n".join(card(p, "", "../") for p in rest) + "\n  </div>"
+    body = f"""  <section class="blog-hero">
+    <h1>The Rep Rot Blog</h1>
+    <p class="lede">Practical guides for spending less time scrolling and more time moving: screen time, habits, bodyweight training and getting out of bed.</p>
+  </section>
+{feat_html}{grid}
+{CTA}"""
+    image = f"{SITE}/blog/img/covers/{featured['slug']}.jpg" if featured else f"{SITE}/logo.png"
     return page("The Rep Rot Blog: Screen Time, Habits and Bodyweight Training",
                 "Practical guides for spending less time scrolling and more time moving.",
-                f"{SITE}/blog/", "../", body)
+                f"{SITE}/blog/", "../", body, image)
 
 
 def feed(posts):
@@ -219,15 +376,20 @@ def main():
     posts = [p for p in posts if p["date"] <= today]
     posts.sort(key=lambda p: (p["date"], p["slug"]), reverse=True)
 
-    # Remove pages for posts that were deleted or renamed.
+    # Remove pages and covers for posts that were deleted or renamed.
     live = {p["slug"] for p in posts}
     for folder in BLOG.iterdir():
-        if folder.is_dir() and folder.name not in live:
+        if folder.is_dir() and folder.name not in live | KEEP:
             (folder / "index.html").unlink(missing_ok=True)
             if not any(folder.iterdir()):
                 folder.rmdir()
+    COVERS.mkdir(parents=True, exist_ok=True)
+    for cover in COVERS.glob("*.jpg"):
+        if cover.stem not in live:
+            cover.unlink()
 
     for post in posts:
+        make_cover(post, COVERS / f"{post['slug']}.jpg")
         out = BLOG / post["slug"]
         out.mkdir(exist_ok=True)
         (out / "index.html").write_text(post_page(post, posts), encoding="utf-8")

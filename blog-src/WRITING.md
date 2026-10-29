@@ -94,8 +94,37 @@ tags: Screen Time, iPhone Tips
 -->
 ```
 
+Optional header line `cover: <image>` puts a picture on the post's cover
+(names below). Without it, exercise tags (Squats, Push-Ups, Plank,
+Pull-Ups, Sit-Ups) pick their photo; other posts get the plain cover. Use
+`cover:` on screen-time posts: an app screenshot fits best.
+
 Allowed markup: p, h2, h3, ul, ol, li, strong, em, a, blockquote, hr,
-table/thead/tbody/tr/th/td, p class="sources". No inline styles, no images,
-no scripts.
+table/thead/tbody/tr/th/td, figure/img/figcaption, div class="stat",
+p class="sources". No inline styles, no scripts, no images from other sites.
+
+## Images and visual rhythm
+
+Every post gets a generated cover automatically. Inside the post, add a
+visual every 2–3 sections: at least 2, at most 4. Never two in a row, and
+never the same image twice in a post. Three kinds:
+
+1. **Exercise photo** (wide):
+   `<figure><img src="../img/lib/squat.jpg" alt="…" loading="lazy" width="1200" height="675"><figcaption>…</figcaption></figure>`
+   squat, pushup, plank, pullup, crunch (a sit-up/crunch).
+2. **App screenshot** (narrow phone, only where Rep Rot comes up):
+   `<figure class="phone"><img src="../img/lib/app-one-set.jpg" alt="…" loading="lazy"><figcaption>…</figcaption></figure>`
+   - app-dont-rot: "Don't rot. Rep instead." splash
+   - app-home: home screen, weekly streak, today's push-ups plan
+   - app-triggers: alarms and app limits list
+   - app-pick-trigger: "When should we make you rep?" alarm or app limit
+   - app-one-set: "20 push-ups. Done." the set that unlocks apps
+   - app-rots-prevented: Instagram blocked, "Do 10 push-ups to unlock"
+3. **Stat card** for one key number or rule, sourced in the text:
+   `<div class="stat"><strong>≈5% fitter</strong><span>One sentence of context.</span></div>`
+   Keep the `<strong>` under about 16 characters.
+
+Alt text describes the image; the caption adds a point, it doesn't repeat
+the paragraph. Look at an existing post for the pattern.
 
 Then run `python3 blog-src/build_blog.py` and check it prints the new count.
