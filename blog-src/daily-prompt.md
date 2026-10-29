@@ -10,11 +10,29 @@ this repository (reprot-site). Follow every step; quality beats speed.
 3. Take the first unchecked topic in topics.md. If it overlaps an existing
    post, skip it (mark it "- [~] … (skipped: overlaps <slug>)") and take
    the next.
-4. Research before writing. Use WebSearch/WebFetch to find what currently
-   ranks for the main search phrase (to beat it, not copy it) and to verify
-   every fact you'll use: studies from PubMed/journals/universities, Apple
-   support pages for any iPhone steps (check the current iOS version's
-   wording), and official guidelines. At least 3 solid sources. If a fact
+4. Size up the competition, then research. Write a short brief to
+   blog-src/briefs/<slug>.md before drafting:
+   a. Search the main phrase and 1–2 close variants (WebSearch). Open the
+      top 5 organic results that are articles (skip ads, forums, videos)
+      with WebFetch.
+   b. For each, note: what kind of page it is (step-by-step, listicle,
+      opinion, product page), its main headings, length, whether it cites
+      sources, how current its details are (e.g. old iOS menu names), and
+      what it gets wrong or leaves out.
+   c. Search intent: in one line, what the searcher actually wants to walk
+      away with. Our post must deliver that in its first section.
+   d. Must-cover list: subtopics that most top results include. Readers
+      (and Google) expect them; leaving one out makes the post look thin.
+   e. Questions people ask: related searches and "how do I / why does /
+      is it bad to" variants. Answer the best 2–3 inside the post, as h2/h3
+      headings or a short FAQ near the end.
+   f. Our edge: 2–4 specific things that will make ours the best result,
+      e.g. current iOS 27 steps, real studies with honest caveats, a
+      beginner scale-down, a printable routine or table, a better example.
+      Never copy wording or structure from a competitor.
+   Then verify every fact you'll use: studies from PubMed/journals/
+   universities, Apple support pages for any iPhone steps (current iOS
+   wording), official guidelines. At least 3 solid sources. If a fact
    can't be verified, leave it out.
 5. Write blog-src/posts/<slug>.html in the exact format WRITING.md describes,
    dated today. Link 2–3 relevant earlier posts with ../<slug>/ (only slugs
