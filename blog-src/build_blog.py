@@ -87,6 +87,7 @@ def parse(path):
         "date": datetime.date.fromisoformat(meta["date"]),
         "tags": tags,
         "cover": cover,
+        "cover_text": meta.get("cover_text") or meta["title"],
         "body": body,
         "minutes": max(1, math.ceil(words / 230)),
     }
@@ -155,7 +156,7 @@ def make_cover(post, path):
 
     tracked(draw, (pad, pad), post["tags"][0].upper(), font(19), (150, 156, 163), 3)
 
-    title = post["title"].upper()
+    title = post["cover_text"].upper()
     for size in range(68, 30, -2):
         fnt = font(size)
         lines = wrap(draw, title, fnt, text_w)
