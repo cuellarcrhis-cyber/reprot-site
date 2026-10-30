@@ -26,6 +26,20 @@ the last line of quality.
   Escalate by adding a dated line to blog-src/logs/attention.md saying what
   happened and what you need, then continue with whatever you safely can.
 
+## Budget: $0
+
+There is no marketing budget right now. Everything is organic and free:
+- No paid ads, boosted posts, sponsored placements, paid influencers,
+  paid tools, or paid APIs. Don't propose spending in plans or memos;
+  find the free way (SEO, distribution kits for the owner's own accounts,
+  creator outreach with nothing paid, communities, partnerships).
+- Images: only the free Cloudflare Workers AI allowance with the cheap
+  model (gen_image.py's default, FLUX.1 schnell); never the Leonardo or
+  other premium models. If the allowance runs out, fall back to stat
+  cards / the title cover and carry on.
+- If something genuinely needs money to work, say so in the memo as a
+  note for later, with the expected payoff, and don't act on it.
+
 ## The job
 
 Grow qualified search traffic and turn it into early-access sign-ups
