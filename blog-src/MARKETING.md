@@ -83,6 +83,14 @@ Grow qualified search traffic and turn it into early-access sign-ups
 earn its place: rank for a real search, genuinely help the reader, and make
 Rep Rot the obvious next step without a hard sell.
 
+## How we describe Rep Rot
+
+- Headline / tagline: **Don't rot. Rep instead.** (keep exactly)
+- Supporting line, everywhere a one-line description is needed (site, CTA,
+  bios, closing paragraphs, social captions): **Rep Rot locks the apps you lose hours to until you get up and move.**
+- Use plain words for readers who don't know gym terms ("get up and move",
+  "a few squats or push-ups") before saying "reps".
+
 ## Who we're for
 
 People 18–35 who lose hours to their phone and want to move more, but
