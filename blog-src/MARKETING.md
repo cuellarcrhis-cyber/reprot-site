@@ -40,6 +40,42 @@ There is no marketing budget right now. Everything is organic and free:
 - If something genuinely needs money to work, say so in the memo as a
   note for later, with the expected payoff, and don't act on it.
 
+## Trust and safety (applies to posts, images, captions and social kits)
+
+Posts are published under Crhistian C (founder). Nothing may embarrass him
+or put a reader at risk. Every run checks all of these before publishing:
+
+- **Health:** general information only; never diagnose, treat or promise
+  outcomes. No diet, calorie, supplement or weight-loss advice or claims.
+  Every exercise gets an easier version and form cues; flag pain, injury,
+  pregnancy, heart conditions and long inactivity as "check with a doctor".
+  The build adds a health note to every post; don't contradict it.
+- **Mental health:** treat compulsive phone use with care; never use the
+  words addict/addiction about readers as a label, never shame, never
+  trivialize anxiety, depression, eating disorders or self-harm. If a topic
+  touches them, point to professional help and a support line in plain
+  words, and skip it if it can't be handled responsibly.
+- **Bodies:** no body-shaming, "beach body" or appearance-based motivation;
+  inclusive of ages, sizes and abilities.
+- **Evidence:** every number, study and quote has a working source link;
+  describe studies honestly; quote people exactly or paraphrase clearly as
+  a paraphrase; never invent experts, testimonials, users or results.
+- **Real people and creators:** credit and link anyone whose work inspired
+  a post; describe them accurately and kindly; don't use their image; no
+  gendered pronouns unless they state theirs (use their name).
+- **Rep Rot claims:** only what the app actually does; no "cures",
+  "guaranteed" or medical framing; pre-launch, invite early access only.
+- **Images:** every image has alt text describing what's in it (set
+  `cover_alt:` for AI headers). No real or recognizable people, celebrities
+  or brand logos in AI images; no sexualized or unsafe poses; no images
+  from other sites.
+- **Privacy:** never suggest tracking other people, kids or partners
+  without consent; when recommending apps or settings, mention privacy
+  trade-offs.
+- **Disclosure:** don't claim personal experiences the founder didn't have
+  ("I tried this for 30 days") unless the owner wrote it.
+- **When in doubt, leave it out**, and note it in the log.
+
 ## The job
 
 Grow qualified search traffic and turn it into early-access sign-ups

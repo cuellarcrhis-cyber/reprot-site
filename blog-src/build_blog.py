@@ -54,8 +54,11 @@ BLOG = ROOT / "blog"
 LIB = BLOG / "img" / "lib"
 COVERS = BLOG / "img" / "covers"
 FONT = ROOT / "fonts" / "ArchivoExpanded-Black.ttf"
-STATIC_PAGES = ["", "support/", "privacy/"]
-KEEP = {"img"}   # folders in blog/ that aren't posts
+STATIC_PAGES = ["", "support/", "privacy/", "blog/about/"]
+AUTHOR = "Crhistian C"
+AUTHOR_ROLE = "Founder of Rep Rot"
+AUTHOR_PHOTO = "img/authors/crhistian-c.jpg"   # under blog/; initials until it exists
+KEEP = {"img", "about"}   # folders in blog/ that aren't posts
 
 # Exercise tags pick a photo for the cover when the post doesn't name one.
 TAG_PHOTOS = {"Squats": "squat", "Push-Ups": "pushup", "Plank": "plank",
@@ -89,6 +92,7 @@ def parse(path):
         "tags": tags,
         "cover": cover,
         "cover_text": meta.get("cover_text") or meta["title"],
+        "cover_alt": meta.get("cover_alt", ""),
         "body": body,
         "minutes": max(1, math.ceil(words / 230)),
     }
@@ -186,9 +190,23 @@ def nice_date(date):
     return date.strftime("%b %-d, %Y")
 
 
+def avatar(up):
+    if (BLOG / AUTHOR_PHOTO).exists():
+        return f'<img class="avatar" src="{up}blog/{AUTHOR_PHOTO}" alt="{esc(AUTHOR)}">'
+    return '<span class="avatar initials" aria-hidden="true">CC</span>'
+
+
+def cover_alt(post):
+    """Alt text for the cover: the AI header's description, else the title cover's text."""
+    header = BLOG / "img" / "posts" / f"{post['slug']}-header.jpg"
+    if header.exists() and post["cover"] != "plain" and post["cover_alt"]:
+        return post["cover_alt"]
+    return f"Rep Rot cover: {post['cover_text']}"
+
+
 def byline(post, up):
-    return (f'<div class="byline"><img class="avatar" src="{up}logo.png" alt="">'
-            f'<span>Rep Rot Team</span><span class="dot">·</span>'
+    return (f'<div class="byline">{avatar(up)}'
+            f'<a class="author" href="{up}blog/about/">{esc(AUTHOR)}</a><span class="dot">·</span>'
             f'<time datetime="{post["date"].isoformat()}">{nice_date(post["date"])}</time>'
             f'<span class="dot">·</span><span>{post["minutes"]} min read</span></div>')
 
@@ -196,7 +214,7 @@ def byline(post, up):
 def card(post, to_blog, up):
     """to_blog = path to /blog/ from the page; up = path to the site root."""
     return f"""    <a class="post-card" href="{to_blog}{post['slug']}/">
-      <div class="thumb"><img src="{to_blog}img/covers/{post['slug']}.jpg" alt="" loading="lazy" width="1200" height="675"></div>
+      <div class="thumb"><img src="{to_blog}img/covers/{post['slug']}.jpg" alt="{esc(cover_alt(post))}" loading="lazy" width="1200" height="675"></div>
       <div class="card-body">
         <h3>{esc(post['title'])}</h3>
         <p>{esc(post['description'])}</p>
@@ -274,6 +292,56 @@ CTA = f"""  <aside class="cta-card">
   </aside>"""
 
 
+def post_footer(post):
+    """Safety note and author box under every post."""
+    updated = (f' Last updated <time datetime="{post["updated"].isoformat()}">{nice_date(post["updated"])}</time>.'
+               if post["updated"] else "")
+    return f"""<aside class="safety">
+      <strong>Health note.</strong> This is general information, not medical advice. Check with a doctor before starting a new exercise routine, especially if you have a health condition, an injury or are pregnant, and stop if anything hurts. If you're struggling with your mental health, please reach out to someone you trust or a local support line.
+    </aside>
+    <aside class="author-box">
+      {avatar("../../")}
+      <div>
+        <p class="author-name"><a href="../about/">{esc(AUTHOR)}</a> · {esc(AUTHOR_ROLE)}</p>
+        <p>Every claim is checked against the sources listed above.{updated} Spotted a mistake? Email <a href="mailto:help@reprotapp.com">help@reprotapp.com</a> and we'll fix it. <a href="../about/">How we write</a>.</p>
+      </div>
+    </aside>"""
+
+
+def about_page():
+    body = f"""  <article class="post">
+    <div class="post-head">
+      <a class="crumb" href="../">← All posts</a>
+      <h1>About this blog</h1>
+      <p class="dek">Who writes it, how it's made, and the standards every post has to meet.</p>
+    </div>
+    <div class="prose">
+<aside class="author-box">{avatar("../../")}<div><p class="author-name">{esc(AUTHOR)} · {esc(AUTHOR_ROLE)}</p><p>Crhistian builds Rep Rot, an iPhone app that locks the apps you lose time to until you do your reps. This blog shares what actually helps: the research on screen time and habits, and simple bodyweight training anyone can start today.</p></div></aside>
+
+<h2>How posts are made</h2>
+<p>Posts are researched and drafted with the help of AI, then checked against our standards before they go up. Most illustrations are AI-generated; a few use photos from the Rep Rot app. Crhistian is responsible for everything published here.</p>
+
+<h2>Our standards</h2>
+<ul>
+  <li><strong>Sources for every claim.</strong> Studies, official guidance and Apple's own support pages, linked at the end of each post. If we can't verify something, we leave it out.</li>
+  <li><strong>Honest about evidence.</strong> We say how big a study was and whether it shows cause or just a link.</li>
+  <li><strong>Safety first.</strong> Exercise advice is conservative, with easier versions for beginners. No medical, diet or weight-loss promises, and no body-shaming.</li>
+  <li><strong>Straight about Rep Rot.</strong> We only describe what the app actually does, and we never pay for or invent reviews or testimonials.</li>
+  <li><strong>Credit where it's due.</strong> When a post is inspired by someone's video or idea, we name and link them.</li>
+</ul>
+
+<h2>Corrections</h2>
+<p>If something is wrong or out of date, email <a href="mailto:help@reprotapp.com">help@reprotapp.com</a>. We fix errors quickly and update the post's date.</p>
+
+<h2>Not medical advice</h2>
+<p>Everything here is general information. Talk to a doctor before starting a new exercise routine, especially with a health condition, an injury or during pregnancy. If you're struggling with your mental health, please reach out to someone you trust or a local support line.</p>
+    </div>
+  </article>
+{CTA}"""
+    return page("About the Rep Rot blog", "Who writes the Rep Rot blog, how posts are made, and our editorial and safety standards.",
+                f"{SITE}/blog/about/", "../../", body, f"{SITE}/logo.png")
+
+
 def post_page(post, posts):
     url = f"{SITE}/blog/{post['slug']}/"
     image = f"{SITE}/blog/img/covers/{post['slug']}.jpg"
@@ -287,7 +355,7 @@ def post_page(post, posts):
         "mainEntityOfPage": url,
         "keywords": ", ".join(post["tags"]),
         "image": image,
-        "author": {"@type": "Organization", "name": "Rep Rot", "url": SITE},
+        "author": {"@type": "Person", "name": AUTHOR, "jobTitle": AUTHOR_ROLE, "url": f"{SITE}/blog/about/"},
         "publisher": {"@type": "Organization", "name": "Rep Rot",
                       "logo": {"@type": "ImageObject", "url": f"{SITE}/logo.png"}},
     }
@@ -308,10 +376,11 @@ def post_page(post, posts):
       <p class="dek">{esc(post['description'])}</p>
       {byline(post, "../../")}
     </div>
-    <figure class="post-cover"><img src="../img/covers/{post['slug']}.jpg" alt="" width="1200" height="675"></figure>
+    <figure class="post-cover"><img src="../img/covers/{post['slug']}.jpg" alt="{esc(cover_alt(post))}" width="1200" height="675"></figure>
     <div class="prose">
 {prose(post['body'])}
     </div>
+    {post_footer(post)}
   </article>
 {CTA}
 {more_html}"""
@@ -324,7 +393,7 @@ def index_page(posts):
     if featured:
         tags = "".join(f'<span class="tag">{esc(t)}</span>' for t in featured["tags"])
         feat_html = f"""  <a class="featured" href="{featured['slug']}/">
-    <div class="thumb"><img src="img/covers/{featured['slug']}.jpg" alt="" width="1200" height="675"></div>
+    <div class="thumb"><img src="img/covers/{featured['slug']}.jpg" alt="{esc(cover_alt(featured))}" width="1200" height="675"></div>
     <div class="featured-body">
       <div class="tags">{tags}</div>
       <h2>{esc(featured['title'])}</h2>
@@ -406,6 +475,8 @@ def main():
         out.mkdir(exist_ok=True)
         (out / "index.html").write_text(post_page(post, posts), encoding="utf-8")
     (BLOG / "index.html").write_text(index_page(posts), encoding="utf-8")
+    (BLOG / "about").mkdir(exist_ok=True)
+    (BLOG / "about" / "index.html").write_text(about_page(), encoding="utf-8")
     (BLOG / "feed.xml").write_text(feed(posts), encoding="utf-8")
     (ROOT / "sitemap.xml").write_text(sitemap(posts), encoding="utf-8")
     (ROOT / "robots.txt").write_text(f"User-agent: *\nDisallow: /blog-src/\n\nSitemap: {SITE}/sitemap.xml\n", encoding="utf-8")

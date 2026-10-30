@@ -47,6 +47,10 @@ this repository (reprot-site). Follow every step; quality beats speed.
    - Exercise advice includes easier versions and safety notes.
    - Rep Rot claims match what the app does (see WRITING.md). No overclaims.
    - No banned phrases, no emoji, no filler paragraphs, short paragraphs.
+   - Passes every point in MARKETING.md, "Trust and safety" (health,
+     mental health, bodies, evidence, real people, claims, images, privacy).
+   - The post has `cover_alt:` describing its AI header, and every inline
+     image has real alt text.
    - Description is 140–160 characters.
    - A header illustration plus 2–4 inline visuals (AI scene / app photo /
      app screenshot / stat card), spread out, with real alt text and
@@ -68,7 +72,8 @@ this repository (reprot-site). Follow every step; quality beats speed.
    people actually search for, in the same format, mixing how-to and point
    of view across screen time, mornings/sleep and bodyweight training.
 8b. Write the distribution kit for the post (MARKETING.md, "Distribution
-   kit") to blog-src/social/<slug>.md.
+   kit") to blog-src/social/<slug>.md. Same trust-and-safety rules: no
+   health promises, credit creators, no hype that the post doesn't support.
 9. Append one line to blog-src/logs/published.md:
    "YYYY-MM-DD  <slug>  <title>  (<word count> words)".
 

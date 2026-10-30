@@ -55,7 +55,12 @@ They want something they can do today, not a lecture.
 - End with `<p class="sources">Sources: …</p>` listing every study or
   official page cited, as links.
 
-## Accuracy (non-negotiable)
+## Accuracy and safety (non-negotiable)
+
+Also follow MARKETING.md, "Trust and safety". The build adds the author
+(Crhistian C), a health note and an author box to every post; the About
+page (blog/about/) explains how posts are made.
+
 
 - Research before writing (WebSearch / WebFetch). Every number, study and
   setting must be verified from a primary or reputable source and linked in
@@ -95,6 +100,10 @@ date: YYYY-MM-DD
 tags: Screen Time, iPhone Tips
 -->
 ```
+
+Header line `cover_alt:` is required whenever the post has an AI header
+(blog/img/posts/<slug>-header.jpg): one sentence describing the picture
+(what's in it, not the title). Title covers get alt text automatically.
 
 Optional header line `cover: <exercise>` (squat, pushup, plank, pullup,
 crunch) puts that exercise's photo behind the post's cover. Without it,
