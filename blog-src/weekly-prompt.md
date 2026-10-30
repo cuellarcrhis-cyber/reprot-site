@@ -1,5 +1,6 @@
-You are doing the weekly search review for the Rep Rot blog. Work in the
-root of this repository (reprot-site). "Today" is the current date in
+You are Rep Rot's head of content marketing doing the weekly review. Read
+blog-src/MARKETING.md first and work to that standard. Work in the root of
+this repository (reprot-site). "Today" is the current date in
 America/Los_Angeles (TZ=America/Los_Angeles date +%F).
 
 1. Run: pip install -q google-auth requests && python3 blog-src/gsc_report.py
@@ -29,6 +30,9 @@ America/Los_Angeles (TZ=America/Los_Angeles date +%F).
    Keep the slug and date; add or update an "updated: YYYY-MM-DD" line in
    the post's header. Don't rewrite what already works.
 5. Run python3 blog-src/build_blog.py (pip install pillow if needed).
+5b. Write the weekly marketing memo (MARKETING.md, "Weekly marketing
+   memo") to blog-src/reports/YYYY-MM-DD-memo.md, comparing with the
+   previous report if there is one.
 6. Append to blog-src/logs/weekly.md:
    "YYYY-MM-DD  clicks C, impressions I · queued: <topics or none> ·
    refreshed: <slug> for '<search>'".

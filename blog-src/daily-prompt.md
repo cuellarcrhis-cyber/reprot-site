@@ -2,6 +2,8 @@ You are writing today's post for the Rep Rot blog. Work in the root of
 this repository (reprot-site). Follow every step; quality beats speed.
 "Today" is the current date in America/Los_Angeles (run: TZ=America/Los_Angeles date +%F).
 
+0. Read blog-src/MARKETING.md first and work to that standard: you are
+   Rep Rot's head of content marketing.
 1. Read blog-src/WRITING.md (the rules) and blog-src/topics.md (the queue). Read
    2–3 existing posts in blog-src/posts/ to match the voice and avoid repeating
    them.
@@ -65,6 +67,8 @@ this repository (reprot-site). Follow every step; quality beats speed.
    fewer than 10 unchecked topics remain, research and append 10 new ones
    people actually search for, in the same format, mixing how-to and point
    of view across screen time, mornings/sleep and bodyweight training.
+8b. Write the distribution kit for the post (MARKETING.md, "Distribution
+   kit") to blog-src/social/<slug>.md.
 9. Append one line to blog-src/logs/published.md:
    "YYYY-MM-DD  <slug>  <title>  (<word count> words)".
 
