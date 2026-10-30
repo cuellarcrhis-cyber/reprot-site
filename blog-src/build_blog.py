@@ -238,7 +238,7 @@ def page(title, description, url, up, body, image, extra_head=""):
 <footer class="site-foot">
   <div class="wrap foot-row">
     <span>© {datetime.date.today().year} Rep Rot. Don't rot. Rep instead.</span>
-    <nav><a href="{up}">Home</a><a href="{up}blog/">Blog</a><a href="{up}support/">Support</a><a href="{up}privacy/">Privacy</a><a href="{SITE}/blog/feed.xml">RSS</a></nav>
+    <nav><a href="{up}">Home</a><a href="{up}blog/">Blog</a><a href="{up}support/">Support</a><a href="{up}privacy/">Privacy</a></nav>
   </div>
 </footer>
 </body>
