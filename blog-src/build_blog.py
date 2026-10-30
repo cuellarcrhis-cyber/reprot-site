@@ -13,8 +13,9 @@ comment:
     -->
     <p>First paragraph...</p>
 
-`cover` is optional: an exercise (squat, pushup, plank, pullup, crunch)
-whose photo goes behind the post's cover. Without it, exercise tags pick
+`cover` is optional: "plain" for the clean black title cover with tally
+marks (no AI header, no photo), or an exercise (squat, pushup, plank,
+pullup, crunch) whose photo goes behind the post's cover. Without it, exercise tags pick
 their photo and other posts get a tally-mark cover over a photo picked from
 the slug. The photos are the app's own, darkened and blurred (see
 blog-src/prepare_images.py).
@@ -75,8 +76,8 @@ def parse(path):
             raise SystemExit(f"{path.name}: missing '{key}'")
     tags = [t.strip() for t in meta["tags"].split(",") if t.strip()]
     cover = meta.get("cover") or next((TAG_PHOTOS[t] for t in tags if t in TAG_PHOTOS), "")
-    if cover and cover not in TAG_PHOTOS.values():
-        raise SystemExit(f"{path.name}: cover must be one of {', '.join(TAG_PHOTOS.values())}")
+    if cover and cover != "plain" and cover not in TAG_PHOTOS.values():
+        raise SystemExit(f"{path.name}: cover must be plain or one of {', '.join(TAG_PHOTOS.values())}")
     body = match.group(2).strip()
     words = len(re.sub(r"<[^>]+>", " ", body).split())
     return {
@@ -135,14 +136,16 @@ def make_cover(post, path):
     # Background: one of the app's exercise photos, blurred and darkened
     # (blog/img/lib/bg-*.jpg). Exercise posts get their own exercise; the
     # rest get one picked from the slug, with tally marks on top.
-    bg = name or sorted(TAG_PHOTOS.values())[sum(map(ord, post["slug"])) % len(TAG_PHOTOS)]
-    img.paste(Image.open(LIB / f"bg-{bg}.jpg").convert("RGB").resize((W, H)))
-    shade = Image.linear_gradient("L").rotate(90).resize((W, H)).point(lambda v: 235 - int(v * 0.7))
-    img.paste(Image.new("RGB", (W, H), (8, 8, 9)), (0, 0), shade)   # darker behind the title
+    # "plain" is the original clean cover: black, title, tally marks.
+    if name != "plain":
+        bg = name or sorted(TAG_PHOTOS.values())[sum(map(ord, post["slug"])) % len(TAG_PHOTOS)]
+        img.paste(Image.open(LIB / f"bg-{bg}.jpg").convert("RGB").resize((W, H)))
+        shade = Image.linear_gradient("L").rotate(90).resize((W, H)).point(lambda v: 235 - int(v * 0.7))
+        img.paste(Image.new("RGB", (W, H), (8, 8, 9)), (0, 0), shade)   # darker behind the title
     draw = ImageDraw.Draw(img)
-    if not name:
+    if name in ("", "plain"):
         # Tally marks: the reps you'd count on a wall.
-        mark = (58, 58, 62)
+        mark = (30, 30, 33) if name == "plain" else (58, 58, 62)
         for g in range(3):
             x0 = 700 + g * 170
             for i in range(4):
@@ -163,8 +166,10 @@ def make_cover(post, path):
         draw.text((pad, y), line, font=fnt, fill=(245, 245, 246))
         y += int(size * 1.12)
 
-    logo = Image.open(ROOT / "logo.png").convert("RGBA").resize((46, 46), Image.LANCZOS)
-    img.paste(logo, (pad, H - pad - 46), logo)
+    # A plain RR badge: the full app icon turns muddy at this size.
+    draw.rectangle((pad, H - pad - 46, pad + 46, H - pad), fill=(0, 0, 0))
+    rr = font(17)
+    draw.text((pad + 23 - draw.textlength("RR", font=rr) / 2, H - pad - 33), "RR", font=rr, fill=(245, 245, 246))
     tracked(draw, (pad + 62, H - pad - 34), "REP ROT", font(20), (245, 245, 246), 2)
     img.save(path, quality=80, optimize=True)
 
@@ -391,7 +396,7 @@ def main():
         # An AI header illustration (blog-src/gen_image.py) is the cover when
         # the post has one; otherwise the generated title cover.
         header = BLOG / "img" / "posts" / f"{post['slug']}-header.jpg"
-        if header.exists():
+        if header.exists() and post["cover"] != "plain":
             Image.open(header).convert("RGB").resize((1200, 675)).save(COVERS / f"{post['slug']}.jpg", quality=82, optimize=True)
         else:
             make_cover(post, COVERS / f"{post['slug']}.jpg")
