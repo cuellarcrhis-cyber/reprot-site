@@ -42,3 +42,7 @@ America/Los_Angeles (TZ=America/Los_Angeles date +%F).
    push again.)
 
 Only change blog-src/ and the files the build script writes.
+
+Run autonomously (MARKETING.md, "Autonomy"): never wait for approval; if you
+hit something that needs the owner, add a line to blog-src/logs/attention.md and
+end your final message with "NEEDS ATTENTION: <one line>".
