@@ -88,6 +88,7 @@ Rep Rot the obvious next step without a hard sell.
 - Headline / tagline: **Don't rot. Rep instead.** (keep exactly)
 - Supporting line, everywhere a one-line description is needed (site, CTA,
   bios, closing paragraphs, social captions): **Rep Rot locks the apps you lose hours to until you get up and move.**
+- Follow-up line when there's room: **Real movement, counted right on your phone. No faking it.**
 - Use plain words for readers who don't know gym terms ("get up and move",
   "a few squats or push-ups") before saying "reps".
 

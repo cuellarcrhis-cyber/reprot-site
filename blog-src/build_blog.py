@@ -289,7 +289,7 @@ CTA = f"""  <aside class="cta-card">
     <div>
       <p class="cta-kicker">Rep Rot · in testing</p>
       <h2>Don't rot. Rep instead.</h2>
-      <p>Rep Rot locks the apps you lose hours to until you get up and move. It's in testing now: email us and we'll send you an early-access invite.</p>
+      <p>Rep Rot locks the apps you lose hours to until you get up and move. Real movement, counted right on your phone. No faking it. It's in testing now: email us and we'll send you an early-access invite.</p>
     </div>
     <a class="button" href="{EARLY_ACCESS}">Get early access</a>
   </aside>"""
