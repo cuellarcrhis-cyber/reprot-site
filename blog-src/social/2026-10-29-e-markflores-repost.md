@@ -8,7 +8,7 @@ link): ______  (until then, link the profile: instagram.com/e.markflores)
 > "Your willpower pales in comparison to an entire infrastructure that's
 > been studying you since you went online."
 >
-> This Reel by @e.markflores is worth 2 minutes: [Reel link]
+> This Reel by @e.markflores is worth 2 minutes: https://www.instagram.com/reel/DeO1AtkztoT/
 >
 > We agree. So stop trying to out-willpower the feed. Decide once, while
 > you're calm: a limit on the 2 apps that eat your nights. And when you hit
