@@ -204,9 +204,12 @@ def cover_alt(post):
     return f"Rep Rot cover: {post['cover_text']}"
 
 
-def byline(post, up):
+def byline(post, up, link=True):
+    """link=False inside cards: a card is one big link, and links can't nest."""
+    name = (f'<a class="author" href="{up}blog/about/">{esc(AUTHOR)}</a>' if link
+            else f'<span class="author">{esc(AUTHOR)}</span>')
     return (f'<div class="byline">{avatar(up)}'
-            f'<a class="author" href="{up}blog/about/">{esc(AUTHOR)}</a><span class="dot">·</span>'
+            f'{name}<span class="dot">·</span>'
             f'<time datetime="{post["date"].isoformat()}">{nice_date(post["date"])}</time>'
             f'<span class="dot">·</span><span>{post["minutes"]} min read</span></div>')
 
@@ -218,7 +221,7 @@ def card(post, to_blog, up):
       <div class="card-body">
         <h3>{esc(post['title'])}</h3>
         <p>{esc(post['description'])}</p>
-        {byline(post, up)}
+        {byline(post, up, link=False)}
       </div>
     </a>"""
 
@@ -398,7 +401,7 @@ def index_page(posts):
       <div class="tags">{tags}</div>
       <h2>{esc(featured['title'])}</h2>
       <p>{esc(featured['description'])}</p>
-      {byline(featured, "../")}
+      {byline(featured, "../", link=False)}
     </div>
   </a>"""
     grid = ""
