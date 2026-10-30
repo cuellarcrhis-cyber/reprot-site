@@ -7,8 +7,10 @@ writes a report the weekly routine reads.
 
 Credentials: a Google Cloud service account with read access to the
 Search Console property (added under Settings → Users and permissions).
-Its JSON key goes in the environment variable GSC_SERVICE_ACCOUNT_JSON
-(the whole JSON text), or in ~/.config/reprot/gsc_service_account.json.
+Its JSON key goes in the environment variable GSC_SERVICE_ACCOUNT_B64
+(the JSON file base64-encoded, one line: safe for env settings), or
+GSC_SERVICE_ACCOUNT_JSON (the raw JSON), or in
+~/.config/reprot/gsc_service_account.json.
 GSC_SITE overrides the property (default: sc-domain:reprotapp.com).
 Exit code 2 = no credentials, 3 = no data yet; both print why.
 """
@@ -27,11 +29,14 @@ SCOPE = "https://www.googleapis.com/auth/webmasters.readonly"
 
 def credentials():
     raw = os.environ.get("GSC_SERVICE_ACCOUNT_JSON")
+    if not raw and os.environ.get("GSC_SERVICE_ACCOUNT_B64"):
+        import base64
+        raw = base64.b64decode(os.environ["GSC_SERVICE_ACCOUNT_B64"]).decode()
     path = Path.home() / ".config" / "reprot" / "gsc_service_account.json"
     if not raw and path.exists():
         raw = path.read_text()
     if not raw:
-        print("No Search Console credentials (GSC_SERVICE_ACCOUNT_JSON). Skipping.")
+        print("No Search Console credentials (GSC_SERVICE_ACCOUNT_B64). Skipping.")
         sys.exit(2)
     from google.oauth2 import service_account
     return service_account.Credentials.from_service_account_info(json.loads(raw), scopes=[SCOPE])
