@@ -51,8 +51,9 @@ this repository (reprot-site). Follow every step; quality beats speed.
      captions. Never images from other sites.
 6b. Make the illustrations (WRITING.md, "Images and visual rhythm"): a
    header and one or two inline scenes with blog-src/gen_image.py, then look
-   at each one (Read the .jpg). Regenerate any that has text, garbled
-   hands/faces, or doesn't fit the post. If gen_image.py says there's no API
+   at each one (Read the .jpg). Regenerate any that has text or numbers,
+   brand logos, garbled hands/faces, a subject cut off at the edge, or doesn't
+   fit the post. Up to 3 tries per image; keep the best. If gen_image.py says there's no API
    key or the API fails twice, skip the illustrations (the build falls back
    to the title cover) and say so in the final message.
 7. Run: python3 blog-src/build_blog.py   It must print the new post count with

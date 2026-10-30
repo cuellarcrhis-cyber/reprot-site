@@ -38,7 +38,8 @@ STYLE = (
     "illustration style with soft studio lighting, gentle shadows and plenty of "
     "negative space; minimal props; calm composition, centered subject. If people "
     "appear, show them stylized and athletic, faces simple. Wide 16:9 frame. "
-    "Absolutely no text, letters, numbers, logos, watermarks or UI labels anywhere."
+    "Keep the main subject fully in frame, nothing cut off at the edges. "
+    "Absolutely no text, letters, numbers, brand logos, watermarks or UI labels anywhere."
 )
 
 
