@@ -85,6 +85,7 @@ def parse(path):
         "title": meta["title"],
         "description": meta["description"],
         "date": datetime.date.fromisoformat(meta["date"]),
+        "updated": datetime.date.fromisoformat(meta["updated"]) if meta.get("updated") else None,
         "tags": tags,
         "cover": cover,
         "cover_text": meta.get("cover_text") or meta["title"],
@@ -282,7 +283,7 @@ def post_page(post, posts):
         "headline": post["title"],
         "description": post["description"],
         "datePublished": post["date"].isoformat(),
-        "dateModified": post["date"].isoformat(),
+        "dateModified": (post["updated"] or post["date"]).isoformat(),
         "mainEntityOfPage": url,
         "keywords": ", ".join(post["tags"]),
         "image": image,
@@ -370,7 +371,7 @@ def sitemap(posts):
     today = datetime.date.today().isoformat()
     urls = [(f"{SITE}/{p}", today) for p in STATIC_PAGES]
     urls.append((f"{SITE}/blog/", posts[0]["date"].isoformat() if posts else today))
-    urls += [(f"{SITE}/blog/{p['slug']}/", p["date"].isoformat()) for p in posts]
+    urls += [(f"{SITE}/blog/{p['slug']}/", (p["updated"] or p["date"]).isoformat()) for p in posts]
     rows = "".join(f"\n  <url><loc>{u}</loc><lastmod>{d}</lastmod></url>" for u, d in urls)
     return f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">{rows}\n</urlset>\n'
 
