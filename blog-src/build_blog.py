@@ -193,7 +193,7 @@ def card(post, to_blog, up):
       <div class="card-body">
         <h3>{esc(post['title'])}</h3>
         <p>{esc(post['description'])}</p>
-        <div class="byline"><time datetime="{post['date'].isoformat()}">{nice_date(post['date'])}</time><span class="dot">·</span><span>{post['minutes']} min read</span></div>
+        {byline(post, up)}
       </div>
     </a>"""
 
