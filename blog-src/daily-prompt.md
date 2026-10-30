@@ -50,7 +50,8 @@ this repository (reprot-site). Follow every step; quality beats speed.
      app screenshot / stat card), spread out, with real alt text and
      captions. Never images from other sites.
 6b. Make the illustrations (WRITING.md, "Images and visual rhythm"): a
-   header and one or two inline scenes with blog-src/gen_image.py, then look
+   header (skip it if blog/img/posts/<slug>-header.jpg already exists, or
+   the topic line says so) and one or two inline scenes with blog-src/gen_image.py, then look
    at each one (Read the .jpg). Regenerate any that has text or numbers,
    brand logos, garbled hands/faces, a subject cut off at the edge, or doesn't
    fit the post. Up to 3 tries per image; keep the best. If gen_image.py says there's no API
