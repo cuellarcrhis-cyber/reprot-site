@@ -10,10 +10,13 @@ post's header (it also becomes the post's cover and social image), and
 Describe only the scene; the house style below is added to every prompt so
 all posts look like one set. Images must not contain text.
 
-Needs one API key, from the environment or a file:
-    GEMINI_API_KEY   (Google, default model gemini-2.5-flash-image), or
-    OPENAI_API_KEY   (OpenAI, model gpt-image-1)
-    file: ~/.config/reprot/image_api_key  ("gemini:<key>" or "openai:<key>")
+Needs one provider, from the environment or a file:
+    CLOUDFLARE_ACCOUNT_ID + CLOUDFLARE_API_TOKEN   (free: Workers AI gives
+        10,000 neurons a day, ~150 images; default model FLUX.1 schnell), or
+    GEMINI_API_KEY   (Google, paid; default model gemini-2.5-flash-image), or
+    OPENAI_API_KEY   (OpenAI, paid; model gpt-image-1)
+    file: ~/.config/reprot/image_api_key, one line:
+        "cloudflare:<account id>:<api token>", "gemini:<key>" or "openai:<key>"
 Override the model with IMAGE_MODEL. Standard library only.
 """
 
@@ -40,6 +43,8 @@ STYLE = (
 
 
 def key():
+    if os.environ.get("CLOUDFLARE_API_TOKEN") and os.environ.get("CLOUDFLARE_ACCOUNT_ID"):
+        return "cloudflare", f'{os.environ["CLOUDFLARE_ACCOUNT_ID"]}:{os.environ["CLOUDFLARE_API_TOKEN"]}'
     if os.environ.get("GEMINI_API_KEY"):
         return "gemini", os.environ["GEMINI_API_KEY"]
     if os.environ.get("OPENAI_API_KEY"):
@@ -47,9 +52,9 @@ def key():
     path = Path.home() / ".config" / "reprot" / "image_api_key"
     if path.exists():
         provider, _, value = path.read_text().strip().partition(":")
-        if provider in ("gemini", "openai") and value:
+        if provider in ("cloudflare", "gemini", "openai") and value:
             return provider, value
-    raise SystemExit("No image API key: set GEMINI_API_KEY or OPENAI_API_KEY (see this file's header).")
+    raise SystemExit("No image API key: set CLOUDFLARE_ACCOUNT_ID + CLOUDFLARE_API_TOKEN (free) or GEMINI_API_KEY / OPENAI_API_KEY (see this file's header).")
 
 
 def post(url, body, headers):
@@ -74,6 +79,18 @@ def gemini(api_key, prompt):
     raise SystemExit(f"No image in the response: {json.dumps(data)[:500]}")
 
 
+def cloudflare(credentials, prompt):
+    account, _, token = credentials.partition(":")
+    model = os.environ.get("IMAGE_MODEL", "@cf/black-forest-labs/flux-1-schnell")
+    data = post(f"https://api.cloudflare.com/client/v4/accounts/{account}/ai/run/{model}",
+                {"prompt": prompt, "steps": 8},
+                {"Authorization": f"Bearer {token}"})
+    image = (data.get("result") or {}).get("image")
+    if not image:
+        raise SystemExit(f"No image in the response: {json.dumps(data)[:500]}")
+    return base64.b64decode(image)
+
+
 def openai(api_key, prompt):
     model = os.environ.get("IMAGE_MODEL", "gpt-image-1")
     data = post("https://api.openai.com/v1/images/generations",
@@ -87,7 +104,7 @@ def main():
         raise SystemExit(__doc__)
     name, scene = sys.argv[1], sys.argv[2]
     provider, api_key = key()
-    raw = (gemini if provider == "gemini" else openai)(api_key, f"{scene}\n\n{STYLE}")
+    raw = {"cloudflare": cloudflare, "gemini": gemini, "openai": openai}[provider](api_key, f"{scene}\n\n{STYLE}")
 
     from PIL import Image   # resize to 16:9, 1200 wide, small JPEG
     img = Image.open(io.BytesIO(raw)).convert("RGB")
