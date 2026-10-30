@@ -142,6 +142,17 @@ Write `blog-src/social/<slug>.md` with:
 All of it in the brand voice, consistent with the post's facts, and linking
 to the post (https://reprotapp.com/blog/<slug>/).
 
+## Reel format to use (owner request 2026-10-30)
+
+Minimal black-and-white motion graphics: glowing white line art on black,
+one short caption per scene, no voice-over or filming, under 30 seconds,
+problem → Rep Rot → "Email for early access" (App Store once live). Brand
+ideas: tally marks growing as the good habit while a phone's glow fades;
+"Don't rot. Rep instead." as the last frame. When a post's distribution kit
+includes a Reel script, prefer this format and describe each scene so it
+can be animated without filming. (Inspired by a competitor's reels; never
+copy their visuals or name them.)
+
 ## Weekly marketing memo (Monday review)
 
 Write `blog-src/reports/<date>-memo.md`, as you would for a CMO:

@@ -4,7 +4,8 @@ The daily job takes the first unchecked topic, writes it, and checks it off
 with the date and slug. Add new ideas at the bottom; reorder freely. Keep a
 mix of how-to and point-of-view, and of screen time / mornings / training.
 
-Format: `- [ ] Working title — main search phrase — shape`
+Format: `- [ ] How Long Does It Take to Refocus After a Notification? — how long to refocus after interruption / flow state — point of view (owner request 2026-10-30, from an @blankspacesapp reel. Fact-check: the reel's '15 minutes to flow' and 'beta to alpha brainwaves' claims are popular but weakly supported; use solid research such as Gloria Mark's interruption studies and say what isn't known. Don't name the other app.)
+- [ ] Working title — main search phrase — shape`
 
 ## Queue
 
