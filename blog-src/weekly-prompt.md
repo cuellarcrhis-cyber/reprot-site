@@ -5,8 +5,10 @@ America/Los_Angeles (TZ=America/Los_Angeles date +%F).
 
 1. Run: pip install -q google-auth requests && python3 blog-src/gsc_report.py
    - Exit 2 (no credentials) or 3 (no data yet): append one line to
-     blog-src/logs/weekly.md ("YYYY-MM-DD  skipped: <reason>"), commit and
-     push that, and stop.
+     blog-src/logs/weekly.md ("YYYY-MM-DD  skipped: <reason>"). If it was
+     exit 2, also add a line to blog-src/logs/attention.md ("Search Console
+     key still missing: weekly review can't run") and end with NEEDS
+     ATTENTION. Commit and push, and stop.
    - Otherwise read the report it wrote in blog-src/reports/.
 2. Read blog-src/WRITING.md, blog-src/topics.md and the list of posts in
    blog-src/posts/.
