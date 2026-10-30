@@ -206,3 +206,4 @@ body.blog main { max-width: none; padding: 0; }
 .author-box p { margin: 0 0 6px; font-size: 14px; line-height: 1.55; color: var(--muted); }
 .author-box .author-name { color: var(--text); font-weight: 650; font-size: 15px; }
 .author-box a { color: var(--text); }
+.prose a.button { color: var(--bg); text-decoration: none; }

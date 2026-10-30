@@ -25,6 +25,7 @@ served too, so robots.txt keeps crawlers out of it:
     blog/<slug>/index.html     one page per post (slug = file name)
     blog/img/covers/<slug>.jpg the post's cover (card, header, social preview)
     blog/index.html            the landing page, newest first
+    support/, privacy/         from blog-src/pages/ (edit those, not the output)
     blog/feed.xml              RSS
     sitemap.xml, robots.txt
 
@@ -419,6 +420,27 @@ def index_page(posts):
                 f"{SITE}/blog/", "../", body, image)
 
 
+def static_page(name):
+    """Support and Privacy, from blog-src/pages/<name>.html, in the same
+    layout as the blog (header, footer, responsive text column)."""
+    text = (POSTS.parent / "pages" / f"{name}.html").read_text(encoding="utf-8")
+    match = re.match(r"\s*<!--(.*?)-->\s*(.*)", text, re.S)
+    meta = {}
+    for line in match.group(1).strip().splitlines():
+        key, _, value = line.partition(":")
+        meta[key.strip().lower()] = value.strip()
+    dek = f'\n      <p class="dek">{meta["dek"]}</p>' if meta.get("dek") else ""
+    body = f"""  <article class="post">
+    <div class="post-head">
+      <h1>{esc(meta["heading"])}</h1>{dek}
+    </div>
+    <div class="prose">
+{match.group(2).strip()}
+    </div>
+  </article>"""
+    return page(meta["title"], meta["description"], f"{SITE}/{name}/", "../", body, f"{SITE}/logo.png")
+
+
 def feed(posts):
     items = "".join(f"""
   <item>
@@ -478,6 +500,9 @@ def main():
         out.mkdir(exist_ok=True)
         (out / "index.html").write_text(post_page(post, posts), encoding="utf-8")
     (BLOG / "index.html").write_text(index_page(posts), encoding="utf-8")
+    for name in ("support", "privacy"):
+        (ROOT / name).mkdir(exist_ok=True)
+        (ROOT / name / "index.html").write_text(static_page(name), encoding="utf-8")
     (BLOG / "about").mkdir(exist_ok=True)
     (BLOG / "about" / "index.html").write_text(about_page(), encoding="utf-8")
     (BLOG / "feed.xml").write_text(feed(posts), encoding="utf-8")
