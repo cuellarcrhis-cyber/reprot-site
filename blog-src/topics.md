@@ -4,11 +4,11 @@ The daily job takes the first unchecked topic, writes it, and checks it off
 with the date and slug. Add new ideas at the bottom; reorder freely. Keep a
 mix of how-to and point-of-view, and of screen time / mornings / training.
 
-Format: `- [ ] How Long Does It Take to Refocus After a Notification? — how long to refocus after interruption / flow state — point of view (owner request 2026-10-30, from an @blankspacesapp reel. Fact-check: the reel's '15 minutes to flow' and 'beta to alpha brainwaves' claims are popular but weakly supported; use solid research such as Gloria Mark's interruption studies and say what isn't known. Don't name the other app.)
-- [ ] Working title — main search phrase — shape`
+Format: `- [ ] Working title — main search phrase — shape`
 
 ## Queue
 
+- [x] How Long Does It Take to Refocus After a Notification? — how long to refocus after interruption / flow state — point of view (owner request 2026-10-30, from an @blankspacesapp reel. Fact-check: the reel's '15 minutes to flow' and 'beta to alpha brainwaves' claims are popular but weakly supported; use solid research such as Gloria Mark's interruption studies and say what isn't known. Don't name the other app. Done 2026-10-31, how-long-to-refocus-after-a-notification)
 - [x] The Phone Is the Enemy of Focus: Brian Chesky's Big-Screen Rule — how to focus better / phone and focus — point of view (2026-10-29, phone-is-the-enemy-of-focus; from a Silicon Valley Girl Podcast clip)
 - [x] How to Stay Consistent With Working Out: Adjust, Don't Miss — how to stay consistent with working out — point of view (2026-10-29, how-to-stay-consistent-with-working-out; inspired by @sober.fitness and @dailyrepsguy)
 

@@ -4,3 +4,4 @@
 2026-10-29  how-to-stay-consistent-with-working-out  How to Stay Consistent With Working Out: Adjust, Don't Miss  (1194 words)
 2026-10-29  phone-is-the-enemy-of-focus  The Phone Is the Enemy of Focus: Brian Chesky's Big-Screen Rule  (1103 words)
 2026-10-30  your-alarm-isnt-too-quiet  Your Alarm Isn't Too Quiet. Your Bed Is Too Easy.  (1595 words)
+2026-10-31  how-long-to-refocus-after-a-notification  How Long Does It Take to Refocus After a Notification?  (1907 words)
