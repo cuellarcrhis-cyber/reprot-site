@@ -6,3 +6,4 @@
 2026-10-30  your-alarm-isnt-too-quiet  Your Alarm Isn't Too Quiet. Your Bed Is Too Easy.  (1595 words)
 2026-10-31  how-long-to-refocus-after-a-notification  How Long Does It Take to Refocus After a Notification?  (1907 words)
 2026-11-01  how-to-set-app-limits-on-iphone  How to Set App Limits on iPhone That Actually Stick  (1905 words)
+2026-11-02  how-many-push-ups-a-day  How Many Push-Ups Should You Do a Day?  (1657 words)

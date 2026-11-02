@@ -16,7 +16,7 @@ Format: `- [ ] Working title — main search phrase — shape`
 - [x] Exercise Snacks: Why One-Minute Workouts Count — exercise snacks — point of view (2026-10-29, exercise-snacks)
 - [x] Your Alarm Isn't Too Quiet. Your Bed Is Too Easy. — how to get out of bed in the morning — point of view (2026-10-30, your-alarm-isnt-too-quiet; slug: your-alarm-isnt-too-quiet; header already made as a one-time halftone collage: blog/img/posts/your-alarm-isnt-too-quiet-header.jpg — keep it, don't generate a header; inline images as usual)
 - [x] How to Set App Limits on iPhone That Actually Stick — iPhone app limits — how-to (2026-11-01, how-to-set-app-limits-on-iphone)
-- [ ] How Many Push-Ups Should You Do a Day? — how many push-ups a day — how-to
+- [x] How Many Push-Ups Should You Do a Day? — how many push-ups a day — how-to (2026-11-02, how-many-push-ups-a-day)
 - [x] Willpower Isn't the Problem. Your Feed Is Built for This. — why can't I stop scrolling — point of view (2026-10-29, willpower-isnt-the-problem; inspired by @e.markflores Reel)
 - [ ] How to Do Your First Real Push-Up (A 4-Week Plan) — push-ups for beginners — how-to
 - [ ] How to Stop Hitting Snooze — how to stop hitting snooze — how-to
