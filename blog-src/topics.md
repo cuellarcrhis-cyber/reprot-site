@@ -18,7 +18,7 @@ Format: `- [ ] Working title — main search phrase — shape`
 - [x] How to Set App Limits on iPhone That Actually Stick — iPhone app limits — how-to (2026-11-01, how-to-set-app-limits-on-iphone)
 - [x] How Many Push-Ups Should You Do a Day? — how many push-ups a day — how-to (2026-11-02, how-many-push-ups-a-day)
 - [x] Willpower Isn't the Problem. Your Feed Is Built for This. — why can't I stop scrolling — point of view (2026-10-29, willpower-isnt-the-problem; inspired by @e.markflores Reel)
-- [ ] How to Do Your First Real Push-Up (A 4-Week Plan) — push-ups for beginners — how-to
+- [x] How to Do Your First Real Push-Up (A 4-Week Plan) — push-ups for beginners — how-to (2026-11-03, how-to-do-your-first-push-up)
 - [ ] How to Stop Hitting Snooze — how to stop hitting snooze — how-to
 - [ ] Grease the Groove: Get Stronger With Sets You Barely Notice — grease the groove — how-to
 - [ ] "Ignore Limit" Is One Tap. That's the Whole Problem. — screen time ignore limit — point of view

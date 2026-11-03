@@ -7,3 +7,4 @@
 2026-10-31  how-long-to-refocus-after-a-notification  How Long Does It Take to Refocus After a Notification?  (1907 words)
 2026-11-01  how-to-set-app-limits-on-iphone  How to Set App Limits on iPhone That Actually Stick  (1905 words)
 2026-11-02  how-many-push-ups-a-day  How Many Push-Ups Should You Do a Day?  (1657 words)
+2026-11-03  how-to-do-your-first-push-up  How to Do Your First Real Push-Up (A 4-Week Plan)  (1914 words)
