@@ -19,8 +19,8 @@ Format: `- [ ] Working title — main search phrase — shape`
 - [x] How Many Push-Ups Should You Do a Day? — how many push-ups a day — how-to (2026-11-02, how-many-push-ups-a-day)
 - [x] Willpower Isn't the Problem. Your Feed Is Built for This. — why can't I stop scrolling — point of view (2026-10-29, willpower-isnt-the-problem; inspired by @e.markflores Reel)
 - [x] How to Do Your First Real Push-Up (A 4-Week Plan) — push-ups for beginners — how-to (2026-11-03, how-to-do-your-first-push-up)
-- [ ] How to Stop Hitting Snooze — how to stop hitting snooze — how-to
-- [ ] Grease the Groove: Get Stronger With Sets You Barely Notice — grease the groove — how-to
+- [~] How to Stop Hitting Snooze — how to stop hitting snooze — how-to (skipped: overlaps your-alarm-isnt-too-quiet)
+- [x] Grease the Groove: Get Stronger With Sets You Barely Notice — grease the groove — how-to (2026-11-04, grease-the-groove)
 - [ ] "Ignore Limit" Is One Tap. That's the Whole Problem. — screen time ignore limit — point of view
 - [ ] How to Do a Proper Bodyweight Squat (and Fix the Usual Mistakes) — bodyweight squat form — how-to
 - [ ] How Long Should You Hold a Plank? — how long to hold a plank — how-to
