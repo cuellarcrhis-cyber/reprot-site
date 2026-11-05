@@ -21,8 +21,8 @@ Format: `- [ ] Working title — main search phrase — shape`
 - [x] How to Do Your First Real Push-Up (A 4-Week Plan) — push-ups for beginners — how-to (2026-11-03, how-to-do-your-first-push-up)
 - [~] How to Stop Hitting Snooze — how to stop hitting snooze — how-to (skipped: overlaps your-alarm-isnt-too-quiet)
 - [x] Grease the Groove: Get Stronger With Sets You Barely Notice — grease the groove — how-to (2026-11-04, grease-the-groove)
-- [ ] "Ignore Limit" Is One Tap. That's the Whole Problem. — screen time ignore limit — point of view
-- [ ] How to Do a Proper Bodyweight Squat (and Fix the Usual Mistakes) — bodyweight squat form — how-to
+- [~] "Ignore Limit" Is One Tap. That's the Whole Problem. — screen time ignore limit — point of view (skipped: overlaps how-to-set-app-limits-on-iphone)
+- [x] How to Do a Proper Bodyweight Squat (and Fix the Usual Mistakes) — bodyweight squat form — how-to (2026-11-05, bodyweight-squat-form; published as "Bodyweight Squat Form: 6 Steps and the 5 Mistakes to Fix")
 - [ ] How Long Should You Hold a Plank? — how long to hold a plank — how-to
 - [ ] Bedtime Scrolling Is Stealing Your Morning — phone before bed — point of view
 - [ ] How to Use iPhone Downtime and Sleep Focus Together — iPhone downtime — how-to
