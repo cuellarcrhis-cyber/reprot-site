@@ -36,6 +36,15 @@ this repository (reprot-site). Follow every step; quality beats speed.
    universities, Apple support pages for any iPhone steps (current iOS
    wording), official guidelines. At least 3 solid sources. If a fact
    can't be verified, leave it out.
+   g. Product signal: end the brief with a "## Product signal" section.
+      Read blog-src/product-signals.md (the criteria, and the log so you
+      don't repeat it). In 2–4 lines: what this research says about the
+      problem Rep Rot solves, and a verdict: none, note, candidate or
+      claim gap. Most posts are "none"; don't stretch. A candidate must
+      pass all five must-pass tests. For a candidate or claim gap, append
+      a full entry to the log in product-signals.md (and a one-line note
+      when it adds to an existing one). Public repo: findings and evidence
+      only, never plans, prices or metrics.
 5. Write blog-src/posts/<slug>.html in the exact format WRITING.md describes,
    dated today. Link 2–3 relevant earlier posts with ../<slug>/ (only slugs
    that exist in blog-src/posts/).
@@ -76,6 +85,8 @@ this repository (reprot-site). Follow every step; quality beats speed.
    health promises, credit creators, no hype that the post doesn't support.
 9. Append one line to blog-src/logs/published.md:
    "YYYY-MM-DD  <slug>  <title>  (<word count> words)".
+   If the verdict was candidate or claim gap, end your final message with
+   "PRODUCT SIGNAL: <title>" so the owner sees it.
 
 10. Commit and push to main:
     git add -A && git commit -m "Blog: <title>" && git push origin HEAD:main

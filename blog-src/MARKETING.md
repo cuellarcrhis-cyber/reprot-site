@@ -166,4 +166,8 @@ Write `blog-src/reports/<date>-memo.md`, as you would for a CMO:
   memo can judge it).
 - **Next week's plan:** the next 7 queued posts by pillar, and one
   distribution priority.
+- **Product signals:** new candidates and claim gaps this week from
+  `product-signals.md` (title, one-line evidence, the change), the single
+  one you'd build first and why, or "none this week". Undecided entries
+  older than two weeks get one line asking the owner to decide.
 Keep it to one page. Numbers, then decisions. No fluff.

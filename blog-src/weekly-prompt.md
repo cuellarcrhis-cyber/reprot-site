@@ -35,6 +35,12 @@ America/Los_Angeles (TZ=America/Los_Angeles date +%F).
 5b. Write the weekly marketing memo (MARKETING.md, "Weekly marketing
    memo") to blog-src/reports/YYYY-MM-DD-memo.md, comparing with the
    previous report if there is one.
+5c. Product signals: read the week's entries in blog-src/product-signals.md
+   and add the memo's "Product signals" section. Search data counts as
+   evidence too: rising searches about a problem the app could solve
+   (e.g. a feature people expect, a pain they keep searching) can make a
+   new entry, judged by the same five tests. Don't re-litigate entries the
+   owner already marked.
 6. Append to blog-src/logs/weekly.md:
    "YYYY-MM-DD  clicks C, impressions I · queued: <topics or none> ·
    refreshed: <slug> for '<search>'".
