@@ -207,3 +207,8 @@ body.blog main { max-width: none; padding: 0; }
 .author-box .author-name { color: var(--text); font-weight: 650; font-size: 15px; }
 .author-box a { color: var(--text); }
 .prose a.button { color: var(--bg); text-decoration: none; }
+
+/* Keyboard users: jump past the header (WCAG 2.4.1). Hidden until focused. */
+.skip { position: absolute; left: 12px; top: -48px; z-index: 10; background: var(--text); color: var(--bg); padding: 10px 14px; border-radius: 10px; font-weight: 600; text-decoration: none; }
+.skip:focus { top: 12px; }
+main:focus { outline: none; }

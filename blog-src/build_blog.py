@@ -248,13 +248,14 @@ def page(title, description, url, up, body, image, extra_head=""):
 <link rel="stylesheet" href="{up}style.css">
 {extra_head}</head>
 <body class="blog">
+<a class="skip" href="#content">Skip to content</a>
 <header class="site-head">
   <div class="wrap head-row">
     <a class="logo" href="{up}"><img src="{up}logo.png" alt=""><span class="brand">Rep Rot</span></a>
     <nav class="head-nav"><a href="{up}blog/">Blog</a><a href="{up}support/">Support</a><a class="pill" href="{EARLY_ACCESS}">Early access</a></nav>
   </div>
 </header>
-<main class="wrap">
+<main class="wrap" id="content" tabindex="-1">
 {body}
 </main>
 <footer class="site-foot">
