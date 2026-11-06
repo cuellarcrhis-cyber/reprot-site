@@ -72,6 +72,9 @@ once the owner decides.
   locked out by a counter that only knows the floor version.
 - **Tests:** 1, 2, 3 (activation, accuracy), 4 (test cases for an existing
   item), 5. → roadmap 2026-11-05 (folded into camera-accuracy feedback)
+- 2026-11-06 note (how-long-to-hold-a-plank): same pattern for planks; every top
+  result starts beginners on knees or an incline. Add a knee plank to the
+  camera test set alongside incline and knee push-ups.
 
 ### 2026-11-05 · Set size: about half your max, never to failure · note
 - **From:** how-many-push-ups-a-day, grease-the-groove

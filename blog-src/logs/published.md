@@ -10,3 +10,4 @@
 2026-11-03  how-to-do-your-first-push-up  How to Do Your First Real Push-Up (A 4-Week Plan)  (1914 words)
 2026-11-04  grease-the-groove  Grease the Groove: Get Stronger With Sets You Barely Notice  (1968 words)
 2026-11-05  bodyweight-squat-form  Bodyweight Squat Form: 6 Steps and the 5 Mistakes to Fix  (1857 words)
+2026-11-06  how-long-to-hold-a-plank  How Long Should You Hold a Plank? Less Than You Think  (1808 words)
