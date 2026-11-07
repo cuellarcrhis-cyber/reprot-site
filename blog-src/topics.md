@@ -24,7 +24,7 @@ Format: `- [ ] Working title — main search phrase — shape`
 - [~] "Ignore Limit" Is One Tap. That's the Whole Problem. — screen time ignore limit — point of view (skipped: overlaps how-to-set-app-limits-on-iphone)
 - [x] How to Do a Proper Bodyweight Squat (and Fix the Usual Mistakes) — bodyweight squat form — how-to (2026-11-05, bodyweight-squat-form; published as "Bodyweight Squat Form: 6 Steps and the 5 Mistakes to Fix")
 - [x] How Long Should You Hold a Plank? — how long to hold a plank — how-to (2026-11-06, how-long-to-hold-a-plank; published as "How Long Should You Hold a Plank? Less Than You Think")
-- [ ] Bedtime Scrolling Is Stealing Your Morning — phone before bed — point of view
+- [x] Bedtime Scrolling Is Stealing Your Morning — phone before bed — point of view (2026-11-07, your-phone-before-bed; published as "Your Phone Before Bed Isn't the Problem. Your Phone in Bed Is.")
 - [ ] How to Use iPhone Downtime and Sleep Focus Together — iPhone downtime — how-to
 - [ ] The 10-Rep Rule: Small Enough to Do, Big Enough to Matter — habit stacking exercise — point of view
 - [ ] How to Do Your First Pull-Up — first pull-up — how-to
@@ -47,7 +47,7 @@ Format: `- [ ] Working title — main search phrase — shape`
 - [ ] How to Reduce Screen Time Without Quitting Social Media — reduce screen time — how-to
 - [ ] Motivation Follows Action, Not the Other Way Around — how to get motivated to work out — point of view
 - [ ] Wall Sits, Squats or Lunges: Best Leg Exercise With No Equipment — no equipment leg workout — how-to
-- [ ] How to Stop Using Your Phone in Bed — stop using phone in bed — how-to
+- [ ] How to Stop Using Your Phone in Bed — stop using phone in bed — how-to (note 2026-11-07: overlaps your-phone-before-bed; re-angle as a pure step-by-step or skip)
 - [ ] Rest Days for Bodyweight Training: How Many Do You Need? — rest days bodyweight — how-to
 - [ ] Boredom Is Not an Emergency — boredom and phone use — point of view
 - [ ] How to Do Push-Ups Without Wrist Pain — push-ups wrist pain — how-to

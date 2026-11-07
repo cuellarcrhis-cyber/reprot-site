@@ -100,3 +100,18 @@ once the owner decides.
   always lets people leave it, so no change. Revisit if the block screen
   is redesigned.
 - **Tests:** 5 fails (current behavior already covers it).
+
+### 2026-11-07 · In-bed use is the moment that matters · note
+- **From:** your-phone-before-bed (brief: briefs/your-phone-before-bed.md)
+- **Finding:** Phone use once in bed, not evening screen use in general, is
+  most clearly linked to less sleep (each extra 10 min of interactive in-bed
+  use ≈ 9 min less sleep in 11–14-year-olds; in-bed use linked to longer
+  sleep latency in 75 adults, use outside bed not).
+- **Evidence:** Brosnan et al. 2024 JAMA Pediatrics (79 analysed, cameras +
+  actigraphy, observational); Kheirinejad et al. (75 adults, app logs + ring);
+  Exelmans & Van den Bulck 2016 (844 adults, survey). Checked via search
+  summaries only.
+- **For Rep Rot:** limits are daily budgets, so the post couldn't promise a
+  bedtime lock and didn't. A time-of-day trigger would fit the core loop.
+- **Tests:** 1, 2, 5 pass; 4 fails (a new trigger type, not a week's change)
+  and 3 is unproven. Likely to recur with the Downtime and phone-in-bed topics.
