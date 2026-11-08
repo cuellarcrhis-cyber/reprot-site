@@ -25,7 +25,7 @@ Format: `- [ ] Working title — main search phrase — shape`
 - [x] How to Do a Proper Bodyweight Squat (and Fix the Usual Mistakes) — bodyweight squat form — how-to (2026-11-05, bodyweight-squat-form; published as "Bodyweight Squat Form: 6 Steps and the 5 Mistakes to Fix")
 - [x] How Long Should You Hold a Plank? — how long to hold a plank — how-to (2026-11-06, how-long-to-hold-a-plank; published as "How Long Should You Hold a Plank? Less Than You Think")
 - [x] Bedtime Scrolling Is Stealing Your Morning — phone before bed — point of view (2026-11-07, your-phone-before-bed; published as "Your Phone Before Bed Isn't the Problem. Your Phone in Bed Is.")
-- [ ] How to Use iPhone Downtime and Sleep Focus Together — iPhone downtime — how-to
+- [x] How to Use iPhone Downtime and Sleep Focus Together — iPhone downtime — how-to (2026-11-08, iphone-downtime-and-sleep-focus)
 - [ ] The 10-Rep Rule: Small Enough to Do, Big Enough to Matter — habit stacking exercise — point of view
 - [ ] How to Do Your First Pull-Up — first pull-up — how-to
 - [ ] Dopamine Detox Is the Wrong Frame. Try Friction Instead. — dopamine detox — point of view

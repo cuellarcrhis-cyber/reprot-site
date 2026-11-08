@@ -115,3 +115,7 @@ once the owner decides.
   bedtime lock and didn't. A time-of-day trigger would fit the core loop.
 - **Tests:** 1, 2, 5 pass; 4 fails (a new trigger type, not a week's change)
   and 3 is unproven. Likely to recur with the Downtime and phone-in-bed topics.
+- 2026-11-08 note (iphone-downtime-and-sleep-focus): recurred. Searchers for
+  "iPhone downtime" want the phone to change at a set time; every top result
+  answers with a schedule. Still fails test 4; the post pairs Rep Rot with
+  iOS's Screen Time Schedule instead of claiming a bedtime lock.
