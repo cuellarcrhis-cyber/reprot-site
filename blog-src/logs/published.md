@@ -13,3 +13,4 @@
 2026-11-06  how-long-to-hold-a-plank  How Long Should You Hold a Plank? Less Than You Think  (1808 words)
 2026-11-07  your-phone-before-bed  Your Phone Before Bed Isn't the Problem. Your Phone in Bed Is.  (1974 words)
 2026-11-08  iphone-downtime-and-sleep-focus  How to Use iPhone Downtime and Sleep Focus Together  (2243 words)
+2026-11-09  habit-stacking-exercise  The 10-Rep Rule: Habit Stacking Exercise That Sticks  (2076 words)
