@@ -75,6 +75,11 @@ once the owner decides.
 - 2026-11-06 note (how-long-to-hold-a-plank): same pattern for planks; every top
   result starts beginners on knees or an incline. Add a knee plank to the
   camera test set alongside incline and knee push-ups.
+- 2026-11-10 note (how-to-do-your-first-pull-up): pull-ups are the Rep Rot
+  exercise most beginners can't do even once; every top result starts with
+  hangs, negatives and assisted reps. The post steers beginners to another
+  unlock exercise for now. Add chin-ups (underhand grip) to the camera test
+  set alongside pull-ups.
 
 ### 2026-11-05 · Set size: about half your max, never to failure · note
 - **From:** how-many-push-ups-a-day, grease-the-groove
