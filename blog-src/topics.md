@@ -28,7 +28,7 @@ Format: `- [ ] Working title — main search phrase — shape`
 - [x] How to Use iPhone Downtime and Sleep Focus Together — iPhone downtime — how-to (2026-11-08, iphone-downtime-and-sleep-focus)
 - [x] The 10-Rep Rule: Small Enough to Do, Big Enough to Matter — habit stacking exercise — point of view (2026-11-09, habit-stacking-exercise; published as "The 10-Rep Rule: Habit Stacking Exercise That Sticks")
 - [x] How to Do Your First Pull-Up — first pull-up — how-to (2026-11-10, how-to-do-your-first-pull-up; published as "How to Do Your First Pull-Up (An 8-Week Plan From Zero)")
-- [ ] Dopamine Detox Is the Wrong Frame. Try Friction Instead. — dopamine detox — point of view
+- [x] Dopamine Detox Is the Wrong Frame. Try Friction Instead. — dopamine detox — point of view (2026-11-11, dopamine-detox)
 - [ ] Sit-Ups vs. Crunches: Which Should You Do? — sit-ups vs crunches — how-to
 - [ ] How to Check Your Real Screen Time on iPhone (and What the Numbers Mean) — check screen time iPhone — how-to
 - [ ] A 5-Minute Morning Workout You Can Do Next to Your Bed — 5 minute morning workout — how-to
