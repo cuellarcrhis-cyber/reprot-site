@@ -124,3 +124,21 @@ once the owner decides.
   "iPhone downtime" want the phone to change at a set time; every top result
   answers with a schedule. Still fails test 4; the post pairs Rep Rot with
   iOS's Screen Time Schedule instead of claiming a bedtime lock.
+
+### 2026-11-12 · A rep total counted across sets · claim gap
+- **From:** 100-rep-method (brief: briefs/100-rep-method.md)
+- **Finding:** The 100-rep method (and the queued 100-push-ups-a-day topic)
+  is one target split into as many sets as it takes, with rests. The topic
+  note suggested "set a 100-rep goal and let the camera count across sets";
+  WRITING.md only documents a set that unlocks apps or stops an alarm, so
+  the post didn't claim a running total and tells readers to keep it on paper.
+- **Evidence:** every top result for "100 rep workout" / "centurion method"
+  splits 100 reps into sets with rest; sets that end close to failure drive
+  growth (Schoenfeld 2017 meta-analysis, 21 studies; Robinson 2024
+  meta-regressions).
+- **For Rep Rot:** confirm whether a session total across sets already
+  exists. If it does, add it to WRITING.md's list of what the app does so
+  posts can say so; if not, a running total that persists across sets
+  within a session is the smallest version.
+- **Tests:** 1 (a set still unlocks), 2, 3 (activation, accuracy of the
+  count), 5 unknown until the owner confirms; logged as a claim gap.

@@ -16,3 +16,4 @@
 2026-11-09  habit-stacking-exercise  The 10-Rep Rule: Habit Stacking Exercise That Sticks  (2076 words)
 2026-11-10  how-to-do-your-first-pull-up  How to Do Your First Pull-Up (An 8-Week Plan From Zero)  (2170 words)
 2026-11-11  dopamine-detox  Dopamine Detox Is the Wrong Frame. Try Friction Instead.  (1870 words)
+2026-11-12  100-rep-method  The 100-Rep Method: Can Bodyweight Build Muscle?  (1978 words)
