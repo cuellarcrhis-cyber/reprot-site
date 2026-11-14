@@ -80,6 +80,10 @@ once the owner decides.
   hangs, negatives and assisted reps. The post steers beginners to another
   unlock exercise for now. Add chin-ups (underhand grip) to the camera test
   set alongside pull-ups.
+- 2026-11-14 note (sit-ups-vs-crunches): same pattern for sit-ups; every top
+  result and the EMG work steer beginners and anyone with a touchy back to the
+  crunch or a partial curl-up. The post doesn't claim a crunch counts as a
+  sit-up. Add crunches and partial sit-ups (feet free) to the camera test set.
 
 ### 2026-11-05 · Set size: about half your max, never to failure · note
 - **From:** how-many-push-ups-a-day, grease-the-groove

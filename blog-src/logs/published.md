@@ -18,3 +18,4 @@
 2026-11-11  dopamine-detox  Dopamine Detox Is the Wrong Frame. Try Friction Instead.  (1870 words)
 2026-11-12  100-rep-method  The 100-Rep Method: Can Bodyweight Build Muscle?  (1978 words)
 2026-11-13  slow-eccentric-reps  Slow Down the Lowering: The Short Daily Workout That Works  (2099 words)
+2026-11-14  sit-ups-vs-crunches  Sit-Ups vs. Crunches: Which Should You Do?  (2098 words)
