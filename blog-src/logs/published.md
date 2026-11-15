@@ -19,3 +19,4 @@
 2026-11-12  100-rep-method  The 100-Rep Method: Can Bodyweight Build Muscle?  (1978 words)
 2026-11-13  slow-eccentric-reps  Slow Down the Lowering: The Short Daily Workout That Works  (2099 words)
 2026-11-14  sit-ups-vs-crunches  Sit-Ups vs. Crunches: Which Should You Do?  (2098 words)
+2026-11-15  how-to-check-screen-time-on-iphone  How to Check Screen Time on iPhone (and What the Numbers Mean)  (1885 words)
