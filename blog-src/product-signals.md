@@ -128,6 +128,11 @@ once the owner decides.
   "iPhone downtime" want the phone to change at a set time; every top result
   answers with a schedule. Still fails test 4; the post pairs Rep Rot with
   iOS's Screen Time Schedule instead of claiming a bedtime lock.
+- 2026-11-16 note (weekly review; from dopamine-detox, 2026-11-11): third
+  recurrence. Scheduled "fast/feast" windows are the same ask as a bedtime
+  lock: change the phone at a set time. Still a note (fails test 4), but it
+  now recurs across three posts and two pillars; flagged for the owner's look
+  in the 2026-11-16 memo.
 
 ### 2026-11-12 · A rep total counted across sets · claim gap
 - **From:** 100-rep-method (brief: briefs/100-rep-method.md)
