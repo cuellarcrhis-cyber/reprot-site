@@ -84,6 +84,10 @@ once the owner decides.
   result and the EMG work steer beginners and anyone with a touchy back to the
   crunch or a partial curl-up. The post doesn't claim a crunch counts as a
   sit-up. Add crunches and partial sit-ups (feet free) to the camera test set.
+- 2026-11-16 note (5-minute-morning-workout): the morning version of the same
+  pattern. Beginners squat to the edge of the bed and do incline push-ups on
+  the bed frame, often in a dim room right after the alarm. Add sit-to-stand
+  squats, bed-frame incline push-ups and low-light bedrooms to the camera test set.
 
 ### 2026-11-05 · Set size: about half your max, never to failure · note
 - **From:** how-many-push-ups-a-day, grease-the-groove
