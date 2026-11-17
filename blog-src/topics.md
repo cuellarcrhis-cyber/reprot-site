@@ -34,8 +34,8 @@ Format: `- [ ] Working title — main search phrase — shape`
 - [x] Sit-Ups vs. Crunches: Which Should You Do? — sit-ups vs crunches — how-to (2026-11-14, sit-ups-vs-crunches)
 - [x] How to Check Your Real Screen Time on iPhone (and What the Numbers Mean) — check screen time iPhone — how-to (2026-11-15, how-to-check-screen-time-on-iphone; published as "How to Check Screen Time on iPhone (and What the Numbers Mean)")
 - [x] A 5-Minute Morning Workout You Can Do Next to Your Bed — 5 minute morning workout — how-to (2026-11-16, 5-minute-morning-workout)
-- [ ] You Don't Need a Gym. You Need a Trigger. — workout motivation — point of view
-- [ ] Desk Breaks That Actually Help: Moving Every Hour — sitting all day exercise — how-to
+- [~] You Don't Need a Gym. You Need a Trigger. — workout motivation — point of view (skipped: overlaps habit-stacking-exercise)
+- [x] Desk Breaks That Actually Help: Moving Every Hour — sitting all day exercise — how-to (2026-11-17, sitting-all-day-exercise; published as "Sitting All Day? The Exercise Breaks That Actually Help")
 - [ ] How to Stop Checking Your Phone First Thing in the Morning — stop checking phone in morning — how-to
 - [ ] How to Build a Push-Up Habit That Survives a Bad Week — exercise habit — how-to
 - [ ] Short Videos, Short Attention? What the Research Actually Says — short form video attention span — point of view

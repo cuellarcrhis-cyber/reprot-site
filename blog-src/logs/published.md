@@ -21,3 +21,4 @@
 2026-11-14  sit-ups-vs-crunches  Sit-Ups vs. Crunches: Which Should You Do?  (2098 words)
 2026-11-15  how-to-check-screen-time-on-iphone  How to Check Screen Time on iPhone (and What the Numbers Mean)  (1885 words)
 2026-11-16  5-minute-morning-workout  A 5-Minute Morning Workout You Can Do Next to Your Bed  (1800 words)
+2026-11-17  sitting-all-day-exercise  Sitting All Day? The Exercise Breaks That Actually Help  (1865 words)
