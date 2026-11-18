@@ -36,7 +36,7 @@ Format: `- [ ] Working title — main search phrase — shape`
 - [x] A 5-Minute Morning Workout You Can Do Next to Your Bed — 5 minute morning workout — how-to (2026-11-16, 5-minute-morning-workout)
 - [~] You Don't Need a Gym. You Need a Trigger. — workout motivation — point of view (skipped: overlaps habit-stacking-exercise)
 - [x] Desk Breaks That Actually Help: Moving Every Hour — sitting all day exercise — how-to (2026-11-17, sitting-all-day-exercise; published as "Sitting All Day? The Exercise Breaks That Actually Help")
-- [ ] How to Stop Checking Your Phone First Thing in the Morning — stop checking phone in morning — how-to
+- [x] How to Stop Checking Your Phone First Thing in the Morning — stop checking phone in morning — how-to (2026-11-18, stop-checking-phone-in-morning)
 - [ ] How to Build a Push-Up Habit That Survives a Bad Week — exercise habit — how-to
 - [ ] Short Videos, Short Attention? What the Research Actually Says — short form video attention span — point of view
 - [ ] How to Get Stronger at Home With Only Bodyweight — bodyweight strength training at home — how-to

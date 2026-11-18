@@ -137,6 +137,10 @@ once the owner decides.
   lock: change the phone at a set time. Still a note (fails test 4), but it
   now recurs across three posts and two pillars; flagged for the owner's look
   in the 2026-11-16 memo.
+- 2026-11-18 note (stop-checking-phone-in-morning): fourth recurrence, from the
+  morning side. After the alarm set, the phone is in hand and unlocked; the post
+  pairs Rep Rot's alarm with iOS Scheduled Summary and a scheduled Focus for the
+  first 30 minutes instead of claiming a morning lock. Still fails test 4.
 
 ### 2026-11-12 · A rep total counted across sets · claim gap
 - **From:** 100-rep-method (brief: briefs/100-rep-method.md)
