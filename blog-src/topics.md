@@ -37,8 +37,8 @@ Format: `- [ ] Working title — main search phrase — shape`
 - [~] You Don't Need a Gym. You Need a Trigger. — workout motivation — point of view (skipped: overlaps habit-stacking-exercise)
 - [x] Desk Breaks That Actually Help: Moving Every Hour — sitting all day exercise — how-to (2026-11-17, sitting-all-day-exercise; published as "Sitting All Day? The Exercise Breaks That Actually Help")
 - [x] How to Stop Checking Your Phone First Thing in the Morning — stop checking phone in morning — how-to (2026-11-18, stop-checking-phone-in-morning)
-- [ ] How to Build a Push-Up Habit That Survives a Bad Week — exercise habit — how-to
-- [ ] Short Videos, Short Attention? What the Research Actually Says — short form video attention span — point of view
+- [~] How to Build a Push-Up Habit That Survives a Bad Week — exercise habit — how-to (skipped: overlaps how-to-stay-consistent-with-working-out)
+- [x] Short Videos, Short Attention? What the Research Actually Says — short form video attention span — point of view (2026-11-19, short-form-video-attention-span; published as "Short-Form Video and Attention Span: What the Research Says")
 - [ ] How to Get Stronger at Home With Only Bodyweight — bodyweight strength training at home — how-to
 - [ ] Plank Variations for Beginners — plank variations — how-to
 - [ ] Why Phone Locks You Set Yourself Fail (and What Works) — app blocker that works — point of view

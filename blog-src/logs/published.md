@@ -23,3 +23,4 @@
 2026-11-16  5-minute-morning-workout  A 5-Minute Morning Workout You Can Do Next to Your Bed  (1800 words)
 2026-11-17  sitting-all-day-exercise  Sitting All Day? The Exercise Breaks That Actually Help  (1865 words)
 2026-11-18  stop-checking-phone-in-morning  How to Stop Checking Your Phone First Thing in the Morning  (1960 words)
+2026-11-19  short-form-video-attention-span  Short-Form Video and Attention Span: What the Research Says  (1819 words)
