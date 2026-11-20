@@ -88,6 +88,10 @@ once the owner decides.
   pattern. Beginners squat to the edge of the bed and do incline push-ups on
   the bed frame, often in a dim room right after the alarm. Add sit-to-stand
   squats, bed-frame incline push-ups and low-light bedrooms to the camera test set.
+- 2026-11-20 note (bodyweight-strength-training-at-home): the same pattern from
+  the top of the ladder. Every top result's answer to "how do I keep getting
+  stronger without weights" is a harder variation, so people who progress will
+  do feet-raised push-ups and split squats. Add those to the camera test set.
 
 ### 2026-11-05 · Set size: about half your max, never to failure · note
 - **From:** how-many-push-ups-a-day, grease-the-groove
