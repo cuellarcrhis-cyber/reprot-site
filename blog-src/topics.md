@@ -40,7 +40,7 @@ Format: `- [ ] Working title — main search phrase — shape`
 - [~] How to Build a Push-Up Habit That Survives a Bad Week — exercise habit — how-to (skipped: overlaps how-to-stay-consistent-with-working-out)
 - [x] Short Videos, Short Attention? What the Research Actually Says — short form video attention span — point of view (2026-11-19, short-form-video-attention-span; published as "Short-Form Video and Attention Span: What the Research Says")
 - [x] How to Get Stronger at Home With Only Bodyweight — bodyweight strength training at home — how-to (2026-11-20, bodyweight-strength-training-at-home; published as "Bodyweight Strength Training at Home: A Plan That Progresses")
-- [ ] Plank Variations for Beginners — plank variations — how-to
+- [x] Plank Variations for Beginners — plank variations — how-to (2026-11-21, plank-variations-for-beginners; published as "Plank Variations for Beginners: 8 Moves, Easiest First")
 - [ ] Why Phone Locks You Set Yourself Fail (and What Works) — app blocker that works — point of view
 - [ ] How to Make Your iPhone Less Addictive: 9 Settings — make iPhone less addictive — how-to
 - [ ] Squats Every Day: Is It Safe and What Happens? — squats every day — how-to

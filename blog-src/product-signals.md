@@ -92,6 +92,10 @@ once the owner decides.
   the top of the ladder. Every top result's answer to "how do I keep getting
   stronger without weights" is a harder variation, so people who progress will
   do feet-raised push-ups and split squats. Add those to the camera test set.
+- 2026-11-21 note (plank-variations-for-beginners): once a front plank is steady,
+  every top result moves beginners to side planks (often from the knees) and
+  shoulder taps. Add knee and full side planks to the camera test set, or show
+  a clear "use a front plank" message if they aren't supported.
 
 ### 2026-11-05 · Set size: about half your max, never to failure · note
 - **From:** how-many-push-ups-a-day, grease-the-groove
