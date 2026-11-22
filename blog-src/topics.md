@@ -41,9 +41,9 @@ Format: `- [ ] Working title — main search phrase — shape`
 - [x] Short Videos, Short Attention? What the Research Actually Says — short form video attention span — point of view (2026-11-19, short-form-video-attention-span; published as "Short-Form Video and Attention Span: What the Research Says")
 - [x] How to Get Stronger at Home With Only Bodyweight — bodyweight strength training at home — how-to (2026-11-20, bodyweight-strength-training-at-home; published as "Bodyweight Strength Training at Home: A Plan That Progresses")
 - [x] Plank Variations for Beginners — plank variations — how-to (2026-11-21, plank-variations-for-beginners; published as "Plank Variations for Beginners: 8 Moves, Easiest First")
-- [ ] Why Phone Locks You Set Yourself Fail (and What Works) — app blocker that works — point of view
-- [ ] How to Make Your iPhone Less Addictive: 9 Settings — make iPhone less addictive — how-to
-- [ ] Squats Every Day: Is It Safe and What Happens? — squats every day — how-to
+- [~] Why Phone Locks You Set Yourself Fail (and What Works) — app blocker that works — point of view (skipped: overlaps how-to-set-app-limits-on-iphone)
+- [~] How to Make Your iPhone Less Addictive: 9 Settings — make iPhone less addictive — how-to (skipped: overlaps how-to-stop-doomscrolling-on-iphone)
+- [x] Squats Every Day: Is It Safe and What Happens? — squats every day — how-to (2026-11-22, squats-every-day)
 - [ ] The First 10 Minutes of Your Day Decide the Next 10 Hours — morning routine — point of view
 - [ ] How to Do Knee Push-Ups Right (and When to Move On) — knee push-ups — how-to
 - [ ] How to Reduce Screen Time Without Quitting Social Media — reduce screen time — how-to

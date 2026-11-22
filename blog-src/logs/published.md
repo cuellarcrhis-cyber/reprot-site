@@ -26,3 +26,4 @@
 2026-11-19  short-form-video-attention-span  Short-Form Video and Attention Span: What the Research Says  (1819 words)
 2026-11-20  bodyweight-strength-training-at-home  Bodyweight Strength Training at Home: A Plan That Progresses  (1963 words)
 2026-11-21  plank-variations-for-beginners  Plank Variations for Beginners: 8 Moves, Easiest First  (2046 words)
+2026-11-22  squats-every-day  Squats Every Day: Is It Safe and What Happens?  (2027 words)
