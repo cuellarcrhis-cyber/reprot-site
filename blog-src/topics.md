@@ -44,13 +44,23 @@ Format: `- [ ] Working title — main search phrase — shape`
 - [~] Why Phone Locks You Set Yourself Fail (and What Works) — app blocker that works — point of view (skipped: overlaps how-to-set-app-limits-on-iphone)
 - [~] How to Make Your iPhone Less Addictive: 9 Settings — make iPhone less addictive — how-to (skipped: overlaps how-to-stop-doomscrolling-on-iphone)
 - [x] Squats Every Day: Is It Safe and What Happens? — squats every day — how-to (2026-11-22, squats-every-day)
-- [ ] The First 10 Minutes of Your Day Decide the Next 10 Hours — morning routine — point of view
-- [ ] How to Do Knee Push-Ups Right (and When to Move On) — knee push-ups — how-to
-- [ ] How to Reduce Screen Time Without Quitting Social Media — reduce screen time — how-to
-- [ ] Motivation Follows Action, Not the Other Way Around — how to get motivated to work out — point of view
+- [~] The First 10 Minutes of Your Day Decide the Next 10 Hours — morning routine — point of view (skipped: overlaps stop-checking-phone-in-morning)
+- [~] How to Do Knee Push-Ups Right (and When to Move On) — knee push-ups — how-to (skipped: overlaps how-to-do-your-first-push-up)
+- [~] How to Reduce Screen Time Without Quitting Social Media — reduce screen time — how-to (skipped: overlaps how-to-stop-doomscrolling-on-iphone)
+- [x] Motivation Follows Action, Not the Other Way Around — how to get motivated to work out — point of view (2026-11-23, how-to-get-motivated-to-work-out; published as "Motivation Follows Action: How to Get Motivated to Work Out")
 - [ ] Wall Sits, Squats or Lunges: Best Leg Exercise With No Equipment — no equipment leg workout — how-to
 - [ ] How to Stop Using Your Phone in Bed — stop using phone in bed — how-to (note 2026-11-07: overlaps your-phone-before-bed; re-angle as a pure step-by-step or skip)
 - [ ] Rest Days for Bodyweight Training: How Many Do You Need? — rest days bodyweight — how-to
 - [ ] Boredom Is Not an Emergency — boredom and phone use — point of view
 - [ ] How to Do Push-Ups Without Wrist Pain — push-ups wrist pain — how-to
 - [ ] The 100 Push-Ups a Day Challenge: Who It's For and How to Do It Safely — 100 push-ups a day — how-to
+- [ ] How to Do a Glute Bridge (and Why It Helps if You Sit All Day) — glute bridge — how-to
+- [ ] You Feel Tired After Scrolling for a Reason — tired after scrolling — point of view
+- [ ] How to Wake Up Early When You're Not a Morning Person — how to wake up early — how-to (keep distinct from your-alarm-isnt-too-quiet: this is shifting the sleep schedule, not getting out of bed)
+- [ ] How to Do Chair Dips at Home Without Hurting Your Shoulders — chair dips — how-to
+- [ ] How to Turn Off Notifications on iPhone Without Missing What Matters — turn off notifications iPhone — how-to (check overlap with how-to-stop-doomscrolling-on-iphone first; angle: which to keep, Focus and summaries)
+- [ ] Superman Exercise: How to Do It, Easier Versions and What It Works — superman exercise — how-to
+- [ ] Phantom Vibrations: Why You Feel Your Phone Buzz When It Didn't — phantom vibration — point of view
+- [ ] Morning Sunlight: Does It Really Help You Wake Up? — morning sunlight — point of view
+- [ ] How to Do Mountain Climbers (Start With the Slow Version) — mountain climbers — how-to
+- [ ] A 10-Minute Bodyweight Workout for Beginners — 10 minute workout at home — how-to (keep distinct from 5-minute-morning-workout: full-body, any time, with a progression)
