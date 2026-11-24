@@ -96,6 +96,10 @@ once the owner decides.
   every top result moves beginners to side planks (often from the knees) and
   shoulder taps. Add knee and full side planks to the camera test set, or show
   a clear "use a front plank" message if they aren't supported.
+- 2026-11-24 note (no-equipment-leg-workout): the three moves every top result
+  uses for legs are squats, lunges/split squats and wall sits. The post sends
+  readers to squats for the unlock. Add reverse lunges to the camera test set
+  next to split squats; a timed wall sit would be a hold like the plank.
 
 ### 2026-11-05 · Set size: about half your max, never to failure · note
 - **From:** how-many-push-ups-a-day, grease-the-groove

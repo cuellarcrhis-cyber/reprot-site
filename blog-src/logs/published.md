@@ -28,3 +28,4 @@
 2026-11-21  plank-variations-for-beginners  Plank Variations for Beginners: 8 Moves, Easiest First  (2046 words)
 2026-11-22  squats-every-day  Squats Every Day: Is It Safe and What Happens?  (2027 words)
 2026-11-23  how-to-get-motivated-to-work-out  Motivation Follows Action: How to Get Motivated to Work Out  (1895 words)
+2026-11-24  no-equipment-leg-workout  No-Equipment Leg Workout: Wall Sits, Squats or Lunges?  (2009 words)

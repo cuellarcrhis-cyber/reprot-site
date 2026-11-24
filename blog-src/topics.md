@@ -48,7 +48,7 @@ Format: `- [ ] Working title — main search phrase — shape`
 - [~] How to Do Knee Push-Ups Right (and When to Move On) — knee push-ups — how-to (skipped: overlaps how-to-do-your-first-push-up)
 - [~] How to Reduce Screen Time Without Quitting Social Media — reduce screen time — how-to (skipped: overlaps how-to-stop-doomscrolling-on-iphone)
 - [x] Motivation Follows Action, Not the Other Way Around — how to get motivated to work out — point of view (2026-11-23, how-to-get-motivated-to-work-out; published as "Motivation Follows Action: How to Get Motivated to Work Out")
-- [ ] Wall Sits, Squats or Lunges: Best Leg Exercise With No Equipment — no equipment leg workout — how-to
+- [x] Wall Sits, Squats or Lunges: Best Leg Exercise With No Equipment — no equipment leg workout — how-to (2026-11-24, no-equipment-leg-workout; published as "No-Equipment Leg Workout: Wall Sits, Squats or Lunges?")
 - [ ] How to Stop Using Your Phone in Bed — stop using phone in bed — how-to (note 2026-11-07: overlaps your-phone-before-bed; re-angle as a pure step-by-step or skip)
 - [ ] Rest Days for Bodyweight Training: How Many Do You Need? — rest days bodyweight — how-to
 - [ ] Boredom Is Not an Emergency — boredom and phone use — point of view
