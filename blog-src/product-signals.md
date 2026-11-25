@@ -191,4 +191,4 @@ once the owner decides.
 - **Tests:** 1 (keeps the lock working on rest days), 2 (ACSM + all top
   results), 3 (safety: no forced reps on a sore muscle; retention: limit
   stays on), 4 (one setting and a default on an existing screen), 5 (not
-  logged; owner to confirm it isn't already planned).
+  logged; owner to confirm it isn't already planned). → declined 2026-11-25 (owner rejected)
