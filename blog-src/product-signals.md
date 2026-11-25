@@ -171,3 +171,24 @@ once the owner decides.
   within a session is the smallest version.
 - **Tests:** 1 (a set still unlocks), 2, 3 (activation, accuracy of the
   count), 5 unknown until the owner confirms; logged as a claim gap.
+
+### 2026-11-25 · A rest day the lock knows about · candidate
+- **From:** rest-days-bodyweight-training (brief: briefs/rest-days-bodyweight-training.md)
+- **Finding:** Every top result for rest days tells people to take 1–3 a
+  week and to leave about 48 hours between hard sessions for the same
+  muscle. Rep Rot's app limits ask for a set each time they're hit, every
+  day, so on a planned rest day the user either reps the sore muscle again
+  or switches the limit off (and may not switch it back).
+- **Evidence:** ACSM position stand 2026 (umbrella review, 137 systematic
+  reviews, >30,000 participants): each major muscle group at least 2 days a
+  week, training to failure not needed; Morán-Navarro et al. 2017 (10 trained
+  men): hard sets slowed recovery for 24–48 h; 1–3 rest days a week in all
+  top-5 results. Lab studies used lifting, not bodyweight.
+- **For Rep Rot:** a "rest day" option on the trigger: on chosen weekdays
+  the unlock asks for a light default (a short plank or a few easy reps of a
+  different exercise) instead of the usual set. Small, keeps the lock on,
+  and lets posts say the app fits a weekly plan.
+- **Tests:** 1 (keeps the lock working on rest days), 2 (ACSM + all top
+  results), 3 (safety: no forced reps on a sore muscle; retention: limit
+  stays on), 4 (one setting and a default on an existing screen), 5 (not
+  logged; owner to confirm it isn't already planned).
