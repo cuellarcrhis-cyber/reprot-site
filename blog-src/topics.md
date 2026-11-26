@@ -51,7 +51,7 @@ Format: `- [ ] Working title — main search phrase — shape`
 - [x] Wall Sits, Squats or Lunges: Best Leg Exercise With No Equipment — no equipment leg workout — how-to (2026-11-24, no-equipment-leg-workout; published as "No-Equipment Leg Workout: Wall Sits, Squats or Lunges?")
 - [~] How to Stop Using Your Phone in Bed — stop using phone in bed — how-to (note 2026-11-07: overlaps your-phone-before-bed; re-angle as a pure step-by-step or skip; skipped 2026-11-25: overlaps your-phone-before-bed and iphone-downtime-and-sleep-focus)
 - [x] Rest Days for Bodyweight Training: How Many Do You Need? — rest days bodyweight — how-to (2026-11-25, rest-days-bodyweight-training)
-- [ ] Boredom Is Not an Emergency — boredom and phone use — point of view
+- [x] Boredom Is Not an Emergency — boredom and phone use — point of view (2026-11-26, boredom-is-not-an-emergency)
 - [ ] How to Do Push-Ups Without Wrist Pain — push-ups wrist pain — how-to
 - [ ] The 100 Push-Ups a Day Challenge: Who It's For and How to Do It Safely — 100 push-ups a day — how-to
 - [ ] How to Do a Glute Bridge (and Why It Helps if You Sit All Day) — glute bridge — how-to
