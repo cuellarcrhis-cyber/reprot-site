@@ -100,6 +100,10 @@ once the owner decides.
   uses for legs are squats, lunges/split squats and wall sits. The post sends
   readers to squats for the unlock. Add reverse lunges to the camera test set
   next to split squats; a timed wall sit would be a hold like the plank.
+- 2026-11-27 note (push-ups-wrist-pain): every top result's fix for sore wrists
+  is changing the hand: fist (knuckle) push-ups, handles or hex dumbbells, often
+  on an incline. The post doesn't claim these are counted and suggests squats or
+  a plank as the unlock set meanwhile. Add fist and handle push-ups to the camera test set.
 
 ### 2026-11-05 · Set size: about half your max, never to failure · note
 - **From:** how-many-push-ups-a-day, grease-the-groove

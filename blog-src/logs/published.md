@@ -31,3 +31,4 @@
 2026-11-24  no-equipment-leg-workout  No-Equipment Leg Workout: Wall Sits, Squats or Lunges?  (2009 words)
 2026-11-25  rest-days-bodyweight-training  Rest Days for Bodyweight Training: How Many Do You Need?  (1920 words)
 2026-11-26  boredom-is-not-an-emergency  Boredom and Phone Use: Why Boredom Isn't an Emergency  (1998 words)
+2026-11-27  push-ups-wrist-pain  Push-Ups and Wrist Pain: 7 Fixes, Easiest First  (2101 words)
