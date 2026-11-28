@@ -175,6 +175,9 @@ once the owner decides.
   within a session is the smallest version.
 - **Tests:** 1 (a set still unlocks), 2, 3 (activation, accuracy of the
   count), 5 unknown until the owner confirms; logged as a claim gap.
+- 2026-11-28 (100-push-ups-a-day): every top result for "100 push-ups a
+  day" splits the 100 into sets across the day; the post again keeps the
+  daily total on paper and describes each unlock as one set.
 
 ### 2026-11-25 · A rest day the lock knows about · candidate
 - **From:** rest-days-bodyweight-training (brief: briefs/rest-days-bodyweight-training.md)

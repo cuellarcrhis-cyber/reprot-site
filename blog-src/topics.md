@@ -53,7 +53,7 @@ Format: `- [ ] Working title — main search phrase — shape`
 - [x] Rest Days for Bodyweight Training: How Many Do You Need? — rest days bodyweight — how-to (2026-11-25, rest-days-bodyweight-training)
 - [x] Boredom Is Not an Emergency — boredom and phone use — point of view (2026-11-26, boredom-is-not-an-emergency)
 - [x] How to Do Push-Ups Without Wrist Pain — push-ups wrist pain — how-to (2026-11-27, push-ups-wrist-pain; published as "Push-Ups and Wrist Pain: 7 Fixes, Easiest First")
-- [ ] The 100 Push-Ups a Day Challenge: Who It's For and How to Do It Safely — 100 push-ups a day — how-to
+- [x] The 100 Push-Ups a Day Challenge: Who It's For and How to Do It Safely — 100 push-ups a day — how-to (2026-11-28, 100-push-ups-a-day; published as "100 Push-Ups a Day: Who It's For and How to Do It Safely")
 - [ ] How to Do a Glute Bridge (and Why It Helps if You Sit All Day) — glute bridge — how-to
 - [ ] You Feel Tired After Scrolling for a Reason — tired after scrolling — point of view
 - [ ] How to Wake Up Early When You're Not a Morning Person — how to wake up early — how-to (keep distinct from your-alarm-isnt-too-quiet: this is shifting the sleep schedule, not getting out of bed)
